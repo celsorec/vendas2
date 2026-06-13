@@ -32,7 +32,7 @@ function exceptionHandler(Throwable $exception)
     error_log($exception->getTraceAsString());
 
     http_response_code(500);
-    echo "Erro inesperado. Tente novamente.";
+    echo "Erro inesperado. Tente novamente."
     exit;
 }
 
