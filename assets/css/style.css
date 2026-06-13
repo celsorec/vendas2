@@ -1,38 +1,33 @@
+@import url('views.css');
 @import url('elements.css');
-@import url('bootstrap.css');
-@import url('pages.css');
+@import url('classes.css');
+@import url('columns.css');
 
 /* Modules */
-@import url('modules/header.css');
 @import url('modules/menu.css');
-@import url('modules/footer.css');
-@import url('modules/message.css');
 @import url('modules/load.css');
-@import url('modules/pagination.css');
+@import url('modules/message.css');
 
-/* Pages */
-@import url('pages/index.css');
-@import url('pages/login.css');
-@import url('pages/search.css');
-@import url('pages/categories.css');
-@import url('pages/scheme.css');
-@import url('pages/logs.css');
-@import url('pages/form_user.css');
-@import url('pages/form_request.css');
-@import url('pages/form_order.css');
+/*@import url('modules/header.css');*/
+/*@import url('modules/footer.css');*/
+
+/* Views */
+@import url('views/config.css');
+@import url('views/home.css');
+@import url('views/barcode.css');
+@import url('views/orders.css');
+@import url('views/404.css');
+
 
 :root {
-    --pri-color: #1a1a1aff;
-    --sec-color: #f0f4f9ff;
-    --std-color: #4d4d4dff;
+    --pri-color: #142d85ff;
+    --sec-color: #ed1b21ff;
+    --std-color: #808080ff;
+    --specialgr: #148562ff;
 
-    --gray-lgt: #e4e4deff;
-    --gray-std: #d4d4d4ff;
+    --gray-lgt: #e4e4e4ff;
     --gray-dft: #a4a4a4ff;
     --gray-drk: #4d4d4dff;
-    
-    --white: #fff;
-    --black: #000;
 
     --success: #c3e6cb;
     --info: #b8daff;
@@ -54,8 +49,16 @@
     background: transparent;
     scroll-behavior: smooth;
     scroll-margin-top: 50px;
-    font-family: 'Lexend', 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: var(--std-color);
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    transition: all ease 0.3s;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

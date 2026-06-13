@@ -6,11 +6,13 @@ require_once __DIR__.'/../Message/MessageHelper.php';
 class DataRecord
 {
     private $pdo;
+    private $dbname;
 
     //Sistema trabalha com múltiplos bancos de dados
-    public function __construct(string $dbname='compras')
+    public function __construct()
     {
-        $this->pdo = new Connect($dbname);
+        $this->dbname = isset($_SESSION['dbname'])?$_SESSION['dbname']:''; //Variável de sessão definina no login action
+        $this->pdo = new Connect($this->dbname);
     }
 
     //Leitura

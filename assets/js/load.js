@@ -1,27 +1,24 @@
 // MESSAGE HANDLER
 let containerLoad = document.querySelector('#container-load');
-let form = document.querySelector('form');
-let links = document.querySelectorAll('a');
-let sbmit = document.querySelector('form #sbmit');
+let form  = document.querySelector('form');
+let load  = document.querySelectorAll('.load'); //Links (a/button) que ativam animação load
+let sbmit = document.querySelector('form button[type=submit]');
 
-//Adiciona delay ao clicar em links
-if(links.length) {
-    links.forEach((element) => {
-        if(!element.classList.contains('linknull'))
-        {
-            element.addEventListener('click', function(e) {
-                e.preventDefault();
-                containerLoad.classList.add('active');
-                const destino = this.getAttribute('href');
-                setTimeout(() => {
-                    window.location.href = destino;
-                }, 500);
-            });
-        }
+//Adiciona delay ao clicar em links (a/button) para ativar animação load como retorno ao usuário
+if(load.length) {
+    load.forEach((element) => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            containerLoad.classList.add('active');
+            const destination = this.getAttribute('href');
+            setTimeout(() => {
+                window.location.href = destination;
+            }, 500);
+        });
     });
 }
 
-//Adiciona delay ao submeter formulários
+//Adiciona delay ao submeter formulários para ativar animação load como retorno ao usuário
 if(sbmit) {
     sbmit.addEventListener('click', function(e) {
         if (form.checkValidity()) {
@@ -29,7 +26,7 @@ if(sbmit) {
             containerLoad.classList.add('active');
             setTimeout(() => {
                 form.submit();
-            }, 500);
+            }, 100);
         }
     });
 }

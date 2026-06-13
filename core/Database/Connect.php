@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/../Message/MessageHelper.php';
+
 class Connect
 {
     private $pdo;
@@ -24,7 +26,10 @@ class Connect
         }
         catch(PDOException $e)
         {
-            die("Erro crítico na conexão com o banco de dados:" . $e->getMessage());
+            MessageHelper::setMessage('Erro na conexão com o banco de dados.', 'alert');
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+            exit;
+            //die("Erro crítico na conexão com o banco de dados:" . $e->getMessage());
         }
     }
 

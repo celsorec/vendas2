@@ -81,6 +81,7 @@ label {
     text-transform: uppercase;
     font-size: 0.8rem;
     display: block;
+    margin: 5px 0;
 }
 
 input,
@@ -140,12 +141,12 @@ textarea {
     height: 35px;
 }
 
-button:focus,
+/* button:focus,
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 3px solid var(--sec-color);
-}
+    outline: 1px solid var(--pri-color);
+} */
 
 /* Tabelas */
 table * {
@@ -181,9 +182,9 @@ th {
     border-top: 1px solid var(--gray-lgt);
 }
 
-tr:hover td {
+/* tr:hover td {
     background-color: cyan;
-}
+} */
 
 tr:nth-child(even) {
     background-color: var(--sec-color);

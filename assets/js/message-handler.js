@@ -8,13 +8,13 @@ if(messageBox) {
     });
     
     setTimeout(() => {
-        messageBox.style.left = '7vw';
+        messageBox.style.left = '0';
         messageBox.style.opacity = '1';
     }, 500);
 
     if(!messageBox.classList.contains('alert')) {
         setTimeout(() => {
-            messageBox.style.left = '1vw';
+            messageBox.style.left = '-100px';
             messageBox.style.opacity = '0';
         }, 5000);
         

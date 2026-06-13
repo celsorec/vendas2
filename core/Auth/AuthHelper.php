@@ -1,31 +1,36 @@
 <?php
 
+require_once __DIR__.'/../Database/DataRecord.php';
+require_once __DIR__.'/../Message/MessageHelper.php';
+
 class AuthHelper
 {
     private $data;
-    
+
     public function __construct()
     {
         $this->data = new DataRecord();
     }
 
-    public function login(string $codus, string $senus): void
+    public function login(string $codve)
     {
-        $result = $this->data->read(['codus', 'nomus', 'senus', 'aceus', 'filus', 'tipus'], 'usuar', "WHERE codus='{$codus}' AND atius='T' AND SQL_DELETED='F'");
-        if(is_array($result) && password_verify($senus, $result[0]['senus']))
+        $result = $this->data->read(['codve', 'nomve'], 'vencr', "WHERE codve='$codve' AND sql_deleted='F'");
+        if(is_array($result))
         {
-            $_SESSION['mfran'] = true;
-            $_SESSION['codus'] = $result[0]['codus'];
-            $_SESSION['nomus'] = $result[0]['nomus'];
-            $_SESSION['aceus'] = $result[0]['aceus'];
-            $_SESSION['filus'] = $result[0]['filus'];
-            $_SESSION['tipus'] = $result[0]['tipus'];
+            MessageHelper::setMessage('Bem-vindo!', 'success');
+            return $result;
+        }
+        else
+        {
+            MessageHelper::setMessage('Usuário não cadastrado', 'alert');
+            return false;
         }
     }
 
-    public static function logout(): void
+    public function logout()
     {
+        MessageHelper::setMessage('Você está desconectado', 'info');
+        $_SESSION = [];
         session_destroy();
-        session_start();
     }
 }
