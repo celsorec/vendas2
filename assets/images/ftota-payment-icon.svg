@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="11.707314"
+   height="11.999996"
+   viewBox="0 0 3.0975601 3.1749991"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="ftota-payment-icon.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="12.205488"
+     inkscape:cx="19.745216"
+     inkscape:cy="6.6773242"
+     inkscape:window-width="1584"
+     inkscape:window-height="861"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.255915,-183.98722)">
+    <g
+       style="display:inline;fill:#808080;fill-opacity:1"
+       id="g217"
+       transform="matrix(0.00387195,0,0,0.00387195,79.946159,187.39454)">
+      <path
+         d="m 220,-60 -140,-140 140,-140 57,56 -44,44 h 494 l -43,-44 56,-56 140,140 -140,140 -57,-56 44,-44 H 233 l 43,44 z m 260,-460 q -50,0 -85,-35 -35,-35 -35,-85 0,-50 35,-85 35,-35 85,-35 50,0 85,35 35,35 35,85 0,50 -35,85 -35,35 -85,35 z m -280,120 q -33,0 -56.5,-23.5 Q 120,-447 120,-480 v -320 q 0,-33 23.5,-56.5 Q 167,-880 200,-880 h 560 q 33,0 56.5,23.5 23.5,23.5 23.5,56.5 v 320 q 0,33 -23.5,56.5 Q 793,-400 760,-400 Z m 80,-80 h 400 q 0,-33 23.5,-56.5 Q 727,-560 760,-560 v -160 q -33,0 -56.5,-23.5 Q 680,-767 680,-800 H 280 q 0,33 -23.5,56.5 Q 233,-720 200,-720 v 160 q 33,0 56.5,23.5 23.5,23.5 23.5,56.5 z m -80,0 v -320 z"
+         id="path1-19"
+         style="fill:#808080;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

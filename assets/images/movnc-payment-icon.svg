@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="12.66666"
+   height="11.999993"
+   viewBox="0 0 3.3513872 3.1749983"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="movnc-payment-icon.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="12.205488"
+     inkscape:cx="11.060598"
+     inkscape:cy="8.6436528"
+     inkscape:window-width="1584"
+     inkscape:window-height="861"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.129001,-183.98723)">
+    <g
+       style="display:inline;fill:#808080;fill-opacity:1"
+       id="g176"
+       transform="matrix(0.00440972,0,0,0.00440972,79.599835,187.69139)">
+      <path
+         d="m 200,-200 v -560 z m 0,80 q -33,0 -56.5,-23.5 Q 120,-167 120,-200 v -560 q 0,-33 23.5,-56.5 Q 167,-840 200,-840 h 560 q 33,0 56.5,23.5 23.5,23.5 23.5,56.5 v 100 H 760 V -760 H 200 v 560 h 560 v -100 h 80 v 100 q 0,33 -23.5,56.5 Q 793,-120 760,-120 Z m 320,-160 q -33,0 -56.5,-23.5 Q 440,-327 440,-360 v -240 q 0,-33 23.5,-56.5 Q 487,-680 520,-680 h 280 q 33,0 56.5,23.5 23.5,23.5 23.5,56.5 v 240 q 0,33 -23.5,56.5 Q 833,-280 800,-280 Z m 280,-80 V -600 H 520 v 240 z m -160,-60 q 25,0 42.5,-17.5 Q 700,-455 700,-480 700,-505 682.5,-522.5 665,-540 640,-540 q -25,0 -42.5,17.5 -17.5,17.5 -17.5,42.5 0,25 17.5,42.5 17.5,17.5 42.5,17.5 z"
+         id="path1-71"
+         style="fill:#808080;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

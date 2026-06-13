@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.1750042mm"
+   height="2.4759209mm"
+   viewBox="0 0 3.1750042 2.4759209"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="visibility-on-icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="9.5641975"
+     inkscape:cx="0"
+     inkscape:cy="-3.3980896"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="1592"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-197.64374,-140.49374)">
+    <g
+       style="display:inline;fill:#f9f9f9;fill-opacity:1"
+       id="g163"
+       transform="matrix(0.00364106,0,0,0.00364106,197.4981,143.40659)">
+      <path
+         d="m 480,-392 q -45,0 -76.5,-31.5 Q 372,-455 372,-500 q 0,-45 31.5,-76.5 31.5,-31.5 76.5,-31.5 45,0 76.5,31.5 31.5,31.5 31.5,76.5 0,45 -31.5,76.5 Q 525,-392 480,-392 Z m 0,192 Q 334,-200 214,-281.5 94,-363 40,-500 94,-637 214,-718.5 334,-800 480,-800 q 141,0 257.5,76 116.5,76 174.5,204 H 821 Q 769,-613 678,-666.5 587,-720 480,-720 367,-720 272.5,-660.5 178,-601 128,-500 q 50,101 144.5,160.5 94.5,59.5 207.5,59.5 20,0 40,-2 20,-2 40,-6 v 81 q -20,3 -40,5 -20,2 -40,2 z m 0,-120 q 22,0 42.5,-5 20.5,-5 38.5,-14 5,-50 31.5,-90 26.5,-40 67.5,-64 v -7 q 0,-75 -52.5,-127.5 Q 555,-680 480,-680 405,-680 352.5,-627.5 300,-575 300,-500 q 0,75 52.5,127.5 Q 405,-320 480,-320 Z m -5,-180 z m 205,380 q -17,0 -28.5,-11.5 Q 640,-143 640,-160 v -120 q 0,-17 11.5,-28.5 Q 663,-320 680,-320 v -40 q 0,-33 23.5,-56.5 23.5,-23.5 56.5,-23.5 33,0 56.5,23.5 23.5,23.5 23.5,56.5 v 40 q 17,0 28.5,11.5 11.5,11.5 11.5,28.5 v 120 q 0,17 -11.5,28.5 Q 857,-120 840,-120 Z m 40,-200 h 80 v -40 q 0,-17 -11.5,-28.5 Q 777,-400 760,-400 q -17,0 -28.5,11.5 Q 720,-377 720,-360 Z"
+         id="path1-41"
+         style="fill:#f9f9f9;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

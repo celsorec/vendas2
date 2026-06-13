@@ -1,0 +1,156 @@
+/* PAGES */
+
+.page {
+    margin-bottom: 50px;
+}
+
+.page .mainheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: var(--pri-color);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 7px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    font-weight: normal;
+}
+
+.btn:hover {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.btn span.icon {
+    width: 18px;
+    height: 18px;
+    background-image: url('../images/checked-icon.svg');
+    background-size: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn span.text {
+    color: #fff;
+}
+
+/* SMALL BTN */
+.small-btn {
+    padding: 5px 25px;
+    color: #fff;
+    border: 1px solid var(--gray-lgt);
+    border-radius: 25px;
+    outline: 0;
+}
+
+.small-btn:hover {
+    padding: 5px 25px;
+    border: 1px solid var(--pri-color);
+}
+
+/* BTNs ICONs */
+.btn-delete span.icon {background-image: url('../images/delete.svg');}
+.btn-print span.icon {background-image: url('../images/print_active.svg');}
+.btn-add span.icon {background-image: url('../images/add_active.svg');}
+.btn-folder span.icon {background-image: url('../images/folder.svg');}
+
+/* Botão editar item nas tabelas de dados */
+.edit-btn {
+    border-radius: 4px;
+    padding: 4px 20px;
+    background-color: var(--pri-color);
+    background-image: url('../images/edit.svg');
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Botão add estágio item nas tabelas de dados */
+.add-btn {
+    border-radius: 4px;
+    padding: 4px 20px;
+    background-color: var(--pri-color);
+    background-image: url('../images/add.svg');
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+/* Botão add estágio item nas tabelas de dados */
+.forward-btn {
+    border-radius: 4px;
+    padding: 4px 20px;
+    background-color: var(--pri-color);
+    background-image: url('../images/forward.svg');
+    background-size: 17px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+/* Subtabela; tabela dentro de outra tabela */
+.subtable:last-child {
+    border-bottom: 0;
+}
+
+.subtable tr {
+    background-color: transparent;
+}
+
+.subtable td {
+    padding: 3px 0 3px 10px;
+    border: 0;
+    border-right: 1px solid var(--gray-lgt);
+}
+
+.subtable td:first-child {
+   padding: 3px 0;
+}
+
+.subtable td:last-child {
+    border-right: 0;
+}
+
+/* FORMs */
+.fields-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.fields-group .fields-subgroup {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.search input {
+    background-image: url('../images/search.svg');
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}

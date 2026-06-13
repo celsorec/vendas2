@@ -1,0 +1,8 @@
+/* VIEWS */
+
+.view {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: calc(100dvh - 55px);
+}

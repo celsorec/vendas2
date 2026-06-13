@@ -1,0 +1,512 @@
+/* ORDERS */
+
+#orders .container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#orders .container form .products {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    background-color: #fff;
+    display: none;
+}
+
+#orders .container form .products header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid var(--gray-lgt);
+    box-shadow: 3px 0px 15px #00000022;
+}
+
+#orders .container form .products header h2 {
+    color: var(--gray-drk);
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+#orders .container form .products .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--gray-lgt);
+    padding-bottom: 10px;
+}
+
+#orders .container form .products .product:last-child {
+    margin-bottom: 10px;
+    border-bottom: 0;
+}
+
+#orders .container form .products .product .top-group,
+#orders .container form .products .product .bottom-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* TOP GROUP */
+#orders .container form .products .product .top-group .nompr {
+    flex-basis: 100%;
+}
+
+#orders .container form .products .product .top-group .nompr input {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: normal;
+}
+
+#orders .container form .products .product .top-group .codpr {
+    display: flex;
+    flex-basis: 30%;
+}
+
+/* inputs gerais */
+#orders .container form .products input {
+    font-size: 1rem;
+    font-weight: 600;
+    border: 0;
+    padding: 0;
+}
+
+/* input código do produto */
+#orders .container form input[name='codpr[]'] {
+    font-size: 12px;
+    font-weight: 400;
+    width: 60px;
+}
+
+/* input grade */
+#orders .container form input[name='gragr[]'] {
+    font-size: 12px;
+    font-weight: 400;
+    width: 15px;
+    text-align: right;
+}
+
+/* BOTTOM GROUP */
+#orders .container form .products .product .bottom-group {
+    flex-basis: 100%;
+    align-items: center;
+    gap: 0;
+}
+
+#orders .container form .products .product .bottom-group .movqt {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+}
+
+/* btns plus/minus; input movqt */
+#orders .container form .products .product .bottom-group .movqt span {
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#orders .container form .products .product .bottom-group .movqt span.plus {
+    background-image: url('../../images/plus-icon.svg');
+}
+
+#orders .container form .products .product .bottom-group .movqt span.minus {
+    background-image: url('../../images/minus-icon.svg');
+}
+
+#orders .container form .products .product .bottom-group .movqt input.movqt {
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    width: 35%;
+    height: fit-content;
+}
+
+/* Subtotal */
+#orders .container form .products .product .bottom-group .subtt {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+#orders .container form .products .product .bottom-group .subtt span {
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 5px;
+    margin-bottom: 4px;
+    color: var(--gray-drk);
+    display: block;
+}
+
+#orders .container form .products .product .bottom-group .subtt input {
+    text-align: right;
+    width: 4ch;
+    height: fit-content;
+    font-size: 25px;
+    font-weight: 400;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+/* BTN delete */
+#orders .container form .products .product .bottom-group .delete {
+    width: 15%;
+    display: flex;
+    justify-content: end;
+}
+
+#orders .container form .products .product .bottom-group .delete .btn {
+    background-image: url('../../images/delete-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    display: block;
+    padding: 0;
+    width: 25px;
+    height: 30px;
+}
+
+/* PAYMENT GROUP */
+#orders .container form .payment-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    position: fixed;
+    bottom: 55px;
+    left: 0;
+    padding: 16px; /* mesmo padding do container principal */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    border-top: 1px solid var(--gray-lgt);
+    box-shadow: -3px 0px 15px #00000022;
+}
+
+#orders .container form .payment-group input {
+    font-size: 1rem;
+    font-weight: 600;
+    border: 0;
+    padding: 0;
+}
+
+#orders .container form .payment-group .payment-total {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    border: 1px solid var(--std-color);
+    background-color: var(--gray-lgt);
+    border-radius: 7px;
+    overflow: hidden;
+    height: 45px;
+    padding: 5px 10px 5px 10px;
+    flex-basis: 100%;
+}
+
+#orders .container form .payment-group .payment-total .total-label {
+    color: var(--gray-drk);
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#orders .container form .payment-group .payment-total .movde {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+#orders .container form .payment-group .payment-total .movde span.brl {
+    color: var(--gray-drk);
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#orders .container form .payment-group .payment-total .movde input[type="number"] {
+    text-align: right;
+    font-size: 24px;
+    font-weight: normal;
+    width: 4ch;
+}
+
+#orders .container form .payment-group .payment-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#orders .container form .payment-group .payment-buttons .btn {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#orders .container form .payment-group .payment-buttons .btn.select-pay {
+    background-color: var(--specialgr);
+    background-image: url('../../images/money-icon.svg');
+    background-size: 30px auto;
+}
+
+#orders .container form .payment-group .payment-buttons .btn.add-item {
+    background-image: url('../../images/add-plus-icon.svg');
+    background-size: 30px auto;
+}
+
+/* CHECKOUT */
+#orders .container form .checkout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    padding-top: 50px;
+    padding-bottom: 120px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #fff;
+}
+
+#orders .container form .checkout .header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    padding-top: 10px;
+    border-bottom: 1px solid var(--gray-lgt);
+    box-shadow: 3px 0px 15px #00000022;
+}
+
+#orders .container form .checkout .header h2 {
+    color: var(--gray-drk);
+    font-weight: normal;
+    text-align: center;
+    margin-left: -40px; /* descontando 40px de .header span, logo abaixo*/
+    flex-basis: 100%;
+}
+
+#orders .container form .checkout .header span {
+    height: 20px;
+    max-width: 40px;
+    overflow: hidden;
+    display: block;
+    box-sizing: content-box;
+    padding: 0 20px;
+    background-image: url('../../images/back-icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#orders .container form .checkout .subheader {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gray-lgt);
+    margin-bottom: 20px;
+}
+
+#orders .container form .checkout .subheader .label-total {
+    font-weight: 500;
+    color: var(--gray-drk);
+}
+
+#orders .container form .checkout .subheader .value-total {
+    font-weight: 500;
+    color: var(--gray-drk);
+}
+
+/* Campos */
+#orders .container form .checkout .field-group {
+    margin-bottom: 20px;
+}
+
+#orders .container form .checkout .field-group label {
+    font-size: 12px;
+}
+
+#orders .container form .checkout .supergroup {
+    display: flex;
+    justify-content: space-between;
+}
+
+#orders .container form .checkout .supergroup .field-group {
+    width: 48%;
+}
+
+#orders .container form .checkout .field-group .group-input {
+    border: 1px solid var(--gray-lgt);
+    display: flex;
+    border-radius: 4px;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+#orders .container form .checkout .field-group .group-input select {
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    padding-left: 40px;
+}
+
+#orders .container form .checkout .field-group .group-input input {
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    padding-left: 45px;
+}
+
+#orders .container form .checkout .field-group .group-input span  {
+    padding: 5px;
+    width: 35px;
+    height: 100%;
+    border-right: 1px solid var(--gray-lgt);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+}
+
+/* campos readonly */
+#orders .container form .checkout .field-group .ftota {border: 1px solid #ccc;}
+#orders .container form .checkout .field-group .ftota span {border-right: 1px solid #ccc;}
+#orders .container form .checkout .field-group .fcalc {border: 1px solid #ccc;}
+#orders .container form .checkout .field-group .fcalc span {border-right: 1px solid #ccc;}
+
+/* background individual */
+#orders .container form .checkout .field-group .group-input.movnc span {background-image: url('../../images/movnc-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.movip span {background-image: url('../../images/movip-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.movde span {background-image: url('../../images/movde-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.fentr span {background-image: url('../../images/fentr-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.ftota span {background-image: url('../../images/ftota-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.fnpre span {background-image: url('../../images/fnpre-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.fcalc span {background-image: url('../../images/fcalc-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.codcl span {background-image: url('../../images/codcl-payment-icon.svg');}
+
+/* Botão finalizar venda */
+#orders .container form .checkout .endcheckout {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 55px;
+    width: 100%;
+    padding: 15px 0;
+    border-top: 1px solid var(--gray-lgt);
+}
+
+#orders .container form .checkout .endcheckout .btn {
+    background-color: var(--specialgr);
+    color: #fff;
+    padding: 12px 50px;
+}
+
+#orders .container form .checkout .endcheckout .btn .icon {
+    background-image: url('../../images/endcheckout-payment-icon.svg');
+}
+
+#orders .container form .checkout .endcheckout .btn .text {
+    font-size: 1.2rem;
+}
+
+/* SENHA DE AUTORIZAÇÃO */
+#orders .container .password-group {
+    position: absolute;
+    left: 0;
+    bottom: 78px;
+    width: 100%;
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    background-color: #f2f2f2ff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-around;
+    padding: 25px 50px;
+
+    display: none;
+}
+
+#orders .container .password-group h2 {
+    font-size: 12px;
+    text-align: center;
+    color: var(--gray-drk);
+    margin: 0;
+}
+
+#orders .container .password-group .field-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#orders .container .password-group .field-group:last-of-type {
+    border: 1px solid transparent;
+}
+
+#orders .container .password-group .field-group .lock-icon {
+    background-image: url('../../images/lock-password-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+    border-right: 1px solid #ddd;
+    width: 35px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+
+#orders .container .password-group .field-group #password {
+    background-color: #fff;
+    border: 0;
+    padding-left: 45px;
+}
+
+#orders .container .password-group .field-group .eye-icon {
+    background-image: url('../../images/visibility-on-icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px auto;
+    background-color: var(--std-color);
+    width: 55px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+#orders .container .password-group .field-group button {
+    width: 47%;
+    padding: 8px;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+#orders .container .password-group .field-group button.btn-ok {background-color: var(--pri-color);}
+#orders .container .password-group .field-group button.btn-cancel {background-color: var(--sec-color);}

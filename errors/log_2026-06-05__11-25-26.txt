@@ -1,0 +1,1 @@
+[05-Jun-2026 11:25:26 America/Sao_Paulo] Erro [2] em C:\inetpub\wwwroot\idealmagazine\vendas2\app\views\home.php:4 - Undefined array key "logos"

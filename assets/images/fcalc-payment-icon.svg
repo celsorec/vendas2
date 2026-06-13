@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="11.999985"
+   height="8.7272615"
+   viewBox="0 0 3.174996 2.309088"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="fcalc-payment-icon.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="12.205488"
+     inkscape:cx="14.747464"
+     inkscape:cy="3.4820402"
+     inkscape:window-width="1584"
+     inkscape:window-height="861"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.217197,-184.42018)">
+    <g
+       style="display:inline;fill:#808080;fill-opacity:1"
+       id="g216"
+       transform="matrix(0.00360795,0,0,0.00360795,80.072879,187.30654)">
+      <path
+         d="m 560,-440 q -50,0 -85,-35 -35,-35 -35,-85 0,-50 35,-85 35,-35 85,-35 50,0 85,35 35,35 35,85 0,50 -35,85 -35,35 -85,35 z m -280,120 q -33,0 -56.5,-23.5 Q 200,-367 200,-400 v -320 q 0,-33 23.5,-56.5 Q 247,-800 280,-800 h 560 q 33,0 56.5,23.5 23.5,23.5 23.5,56.5 v 320 q 0,33 -23.5,56.5 Q 873,-320 840,-320 Z m 80,-80 h 400 q 0,-33 23.5,-56.5 Q 807,-480 840,-480 v -160 q -33,0 -56.5,-23.5 Q 760,-687 760,-720 H 360 q 0,33 -23.5,56.5 Q 313,-640 280,-640 v 160 q 33,0 56.5,23.5 23.5,23.5 23.5,56.5 z m 440,240 H 120 Q 87,-160 63.5,-183.5 40,-207 40,-240 v -440 h 80 v 440 H 800 Z M 280,-400 v -320 z"
+         id="path1-427"
+         style="fill:#808080;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

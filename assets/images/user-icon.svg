@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.1749952mm"
+   height="3.1749952mm"
+   viewBox="0 0 3.1749952 3.1749952"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="user-icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="12.205488"
+     inkscape:cx="36.622869"
+     inkscape:cy="-2.990458"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="1592"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-103.98125,-148.43125)">
+    <g
+       style="display:inline;fill:#808080;fill-opacity:1"
+       id="g220-2"
+       transform="matrix(0.00496093,0,0,0.00496093,103.1875,152.39999)">
+      <path
+         d="m 480,-480 q -66,0 -113,-47 -47,-47 -47,-113 0,-66 47,-113 47,-47 113,-47 66,0 113,47 47,47 47,113 0,66 -47,113 -47,47 -113,47 z m -320,320 v -112 q 0,-34 17.5,-62.5 17.5,-28.5 46.5,-43.5 62,-31 126,-46.5 64,-15.5 130,-15.5 66,0 130,15.5 64,15.5 126,46.5 29,15 46.5,43.5 17.5,28.5 17.5,62.5 v 112 z m 80,-80 h 480 v -32 q 0,-11 -5.5,-20 -5.5,-9 -14.5,-14 -54,-27 -109,-40.5 -55,-13.5 -111,-13.5 -56,0 -111,13.5 -55,13.5 -109,40.5 -9,5 -14.5,14 -5.5,9 -5.5,20 z m 240,-320 q 33,0 56.5,-23.5 Q 560,-607 560,-640 560,-673 536.5,-696.5 513,-720 480,-720 q -33,0 -56.5,23.5 -23.5,23.5 -23.5,56.5 0,33 23.5,56.5 23.5,23.5 56.5,23.5 z m 0,-80 z m 0,400 z"
+         id="path1-0-6"
+         style="fill:#808080;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

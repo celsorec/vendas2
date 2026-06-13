@@ -1,0 +1,34 @@
+/* HOME */
+
+#_404 .container {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 24px;
+}
+
+#_404 .container header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logotipos */
+#_404 .container .logo {
+    width: 100px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+}
+
+#_404 .container .idealmagazine {
+    background-image: url('../../images/ideal_logo.svg');
+}
+
+#_404 .container .maruzi {
+    background-image: url('../../images/maruzi_logo.svg');
+}

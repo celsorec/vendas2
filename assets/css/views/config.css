@@ -1,0 +1,154 @@
+/* CONFIG */
+
+#config {
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#config .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#config .container header h1 {
+    text-align: center;
+    font-size: 20px;
+    color: var(--std-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--gray-lgt);
+}
+
+#config .container header h1 .icon {
+    background-image: url('../../images/config-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+}
+
+#config .container header h1 .text {
+    font-weight: normal;
+}
+
+/* Selecionar loja */
+#config .container #select-store {
+    display: flex;
+    flex-direction: column;
+}
+
+#config .container #select-store .stores {
+    display: flex;
+    justify-content: space-between;
+}
+
+#config .container h3,
+#config .container .subtitle {
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--dft-color);
+}
+
+#config .container #select-store .btn-store {
+    display: inline-block;
+    width: calc(50% - 10px);
+    height: 100px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid var(--gray-lgt);
+    border-radius: 7px;
+}
+
+#config .container #select-store .btn-store.ideal {
+    margin: 0;
+    background-image: url('../../images/ideal_logo.svg');
+    background-size: 76px auto;
+}
+
+#config .container #select-store .btn-store.maruzi {
+    margin: 0;
+    background-image: url('../../images/maruzi_logo.svg');
+    background-size: 66px auto;
+}
+
+#config .container #select-store .stores input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Loja selecionada */
+#config .container #select-store input[type="radio"]:checked + label {
+    border-color: var(--pri-color);
+    box-shadow: 0 0 10px var(--gray-lgt);
+}
+
+/* Selecionar localização */
+#config .container #select-city .group-input.location {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    padding-right: 7px;
+}
+
+#config .container #select-city .group-input.location span {
+    padding: 5px;
+    width: 35px;
+    height: 100%;
+    border-right: 1px solid var(--gray-lgt);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: url('../../images/location-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#config .container #select-city .group-input.location select {
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    padding-left: 45px;
+}
+
+/* Selecionar usuário */
+#config .container #select-user .group-input.usercode {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#config .container #select-user .group-input.usercode span {
+    padding: 5px;
+    width: 35px;
+    height: 100%;
+    border-right: 1px solid var(--gray-lgt);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: url('../../images/user-icon.svg');  
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#config .container #select-user .group-input.usercode input {
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    padding-left: 45px;
+}
