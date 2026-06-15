@@ -47,8 +47,8 @@
 .mainmenu .menu .orders-menu .icon        {background-image: url('../../images/order-icon-gray.svg');}
 .mainmenu .menu .orders-menu.active .icon {background-image: url('../../images/order-icon-blue.svg');}
 
-.mainmenu .menu .stock-menu .icon        {background-image: url('../../images/stock-icon-gray.svg');}
-.mainmenu .menu .stock-menu.active .icon {background-image: url('../../images/stock-icon-blue.svg');}
+.mainmenu .menu .search-menu .icon        {background-image: url('../../images/search-icon-gray.svg');}
+.mainmenu .menu .search-menu.active .icon {background-image: url('../../images/search-icon-blue.svg');}
 
 .mainmenu .menu .swap-menu .icon        {background-image: url('../../images/swap-icon-gray.svg');}
 .mainmenu .menu .swap-menu.active .icon {background-image: url('../../images/swap-icon-blue.svg');}

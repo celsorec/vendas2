@@ -6,6 +6,9 @@ import ('./load.js');
 import ('./barcode.js');
 import ('./resize-inputs.js');
 
+import ('./search-ajax.js');
+import ('./display-products-ajax.js');
+
 
 /*
 document.addEventListener('contextmenu', function(e)

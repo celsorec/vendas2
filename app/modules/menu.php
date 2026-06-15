@@ -17,10 +17,10 @@ $menu =
         'child' => []
     ],
     [
-        //Consultar estoque
-        'label' => 'Estoque',
-        'url'   => '?view=stock',
-        'class' => 'stock-menu disabled',
+        //Localizar informações do produto
+        'label' => 'Buscar',
+        'url'   => '?view=search',
+        'class' => 'search-menu disabled',
         'child' => []
     ],
     [

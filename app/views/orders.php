@@ -286,7 +286,6 @@
                 </div>
             </div>
 
-
             <!-- CHECKOUT -->
             <div class="checkout">
                 <div class="header">

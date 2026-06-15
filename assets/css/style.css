@@ -16,6 +16,7 @@
 @import url('views/home.css');
 @import url('views/barcode.css');
 @import url('views/orders.css');
+@import url('views/search.css');
 @import url('views/404.css');
 
 
@@ -31,7 +32,7 @@
 
     --success: #c3e6cb;
     --info: #b8daff;
-    --alert: #f5c6cb;
+    --alert: #cb0418;
     --warning: #ffeeba;
 }
 

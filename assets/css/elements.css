@@ -130,6 +130,19 @@ input[readonly] {
     outline: unset;
 }
 
+/* 1. Esconde completamente o botão X nativo do navegador */
+input[type="search"]::-webkit-search-cancel-button {
+    opacity: 0;
+}
+
+/* 2. Insere o seu próprio botão customizado no input */
+input[type="search"] {
+    background-image: url('../images/close-search-icon.svg');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Posiciona o X na direita */
+    background-size: 12px;
+}
+
 textarea {
     border: 1px solid var(--gray-lgt);
     border-radius: 3px;
