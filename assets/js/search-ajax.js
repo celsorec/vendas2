@@ -5,13 +5,13 @@ function searchAjax(element)
     let table   = element.getAttribute('data-base');
     let columns = element.getAttribute('name');
     let query   = element.value;
-    //let file    = 'search-ajax.php'; Passar aquivo que vai tratar o assunto: cliente, produto...
+    let file    = element.dataset.file; //Recebe aquivo que vai tratar o assunto: cliente, produto...
 
     //Retorna uma Promise resolvida com um array vazio; Evitar console de erro quando input fica vazio
     if(query.length <= 0) return Promise.resolve([]);
 
     //Função Ajax
-    return fetch('app/modules/search-ajax.php?table='+table+'&columns='+columns+'&q='+encodeURIComponent(query))
+    return fetch('app/modules/'+file+'.php?table='+table+'&columns='+columns+'&q='+encodeURIComponent(query))
     .then(response =>
     {
         if(!response.ok) throw new Error('Erro na resposta do servidor');

@@ -19,7 +19,7 @@ $menu =
     [
         //Localizar informações do produto
         'label' => 'Buscar',
-        'url'   => '?view=search',
+        'url'   => '?view=search-products',
         'class' => 'search-menu disabled',
         'child' => []
     ],
@@ -61,7 +61,7 @@ foreach($menu as $item)
     //Ativando menu (class active) compatível com o parâmetro view
     if($activeMenu === str_replace('?view=', '', $item['url'])) $item['class'] .= ' active';
 
-    $html .= '<li>';
+    $html .= '<li class="menuitem">';
     $html .= '<a href="'.$item['url'].'" class="'.$item['class'].'">';
     $html .= '<span class="icon"></span>';
     $html .= '<span class="text">'.$item['label'].'</span>';

@@ -1,3 +1,10 @@
+<?php
+require_once './app/modules/get-select.php';
+
+//Métodos de pagamento
+$movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
+?>
+
 <div id="orders" class="view">
     <div class="container">        
         <form action="">
@@ -5,267 +12,6 @@
                 <header>
                     <h2>PRODUTOS ADICIONADOS</h2>
                 </header>
-                
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="text" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="text" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="number" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="text" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="text" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="number" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="text" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="text" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="top-group">
-                        <div class="nompr">
-                            <input type="text" name="nompr[]" value="23558 JUV FEM BLUSA COTTON EST SHORT ALFAIATARIA LISO">
-                        </div>
-
-                        <div class="codpr gragr">
-                            <input type="text" name="codpr[]" value="20265979">
-                            <input type="text" name="gragr[]" value="36">
-                        </div>
-                    </div>
-                    
-                    <div class="bottom-group">
-                        <div class="movqt">
-                            <span class="minus"></span>
-                            <input type="number" name="movqt[]" class="movqt" value="1" min="1"  inputmode="numeric">
-                            <span class="plus"></span>
-                        </div>
-
-                        <div class="subtt">
-                            <span class="brl">R$</span>
-                            <input type="number" name="subtt[]" readonly value="0.00" >
-                        </div>
-                        <div class="delete">
-                            <span class="btn"></span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="payment-group">
@@ -275,26 +21,52 @@
                     </div>
                     
                     <div class="movde">
-                        <span class="brl">R$</span>
-                        <input type="number" name="movde" value="0.00" >
+                        <span>0.00</span>
+                        <input type="hidden" name="movde" value="0.00" >
                     </div>
                 </div>
 
                 <div class="payment-buttons">
-                    <span class="btn add-item"></span>
+                    <a href="index.php?view=barcode" class="btn add-item"></a>
                     <span class="btn select-pay"></span>
                 </div>
             </div>
 
             <!-- CHECKOUT -->
-            <div class="checkout">
+            <div class="checkout hidden">
                 <div class="header">
                     <span></span><h2>Finalização</h2>
                 </div>
 
                 <div class="subheader">
                     <div class="label-total">TOTAL DA VENDA</div>
-                    <div class="value-total">R$ 406,70</div>
+                    <div class="value-total"></div>
+                </div>
+
+                <div class="field-group input-search">
+                    <label for="codcl">CLIENTE</label>
+                    <div class="group-input codcl">
+                        <span></span>
+                        <input
+                            name="codcl"
+                            id="codcl"
+                            type="search"
+                            inputmode="numeric"
+                            minlength="10"
+                            maxlength="15"
+                            placeholder="Localizar cliente pelo código"
+                            data-file="search-ajax-client"
+                            data-base="clien01"
+                            pattern="[0-9]+\s-\s[A-Za-zÀ-ÿ\s]+"
+                            oninvalid="this.setCustomValidity('É preciso localizar e selecionar um cliente')"
+                            oninput="this.setCustomValidity('')"
+                            required
+                        >
+                    </div>
+
+                    <ul class="result-ajax">
+                        <!--INSERIR LISTA HTML AQUI (Ajax)-->
+                    </ul>
                 </div>
 
                 <div class="field-group">
@@ -303,26 +75,7 @@
                         <span></span>
                         <select name="movnc" id="movnc" required="">
                             <option value="" disabled="" selected="">Selecione</option>
-                            <option value="A prazo">A prazo</option>
-                            <option value="A vista">A vista</option>
-                            <option value="Cartão Débito">Cartão Débito</option>
-                            <option value="Cartão Fidelidade">Cartão Fidelidade</option>
-                            <option value="Cartão Visanet">Cartão Visanet</option>
-                            <option value="Cartão Mastercard">Cartão Mastercard</option>
-                            <option value="Cartão American Express">Cartão American Express</option>
-                            <option value="Cartão Credishop">Cartão Credishop</option>
-                            <option value="Cartão Hipercard">Cartão Hipercard</option>
-                            <option value="Cartão Outros">Cartão Outros</option>
-                            <option value="Cheque a vista">Cheque a vista</option>
-                            <option value="Cheque pre">Cheque pre</option>
-                            <option value="Orçamento">Orçamento</option>
-                            <option value="Avarias">Avarias</option>
-                            <option value="Garantia-Assistencia">Garantia-Assistencia</option>
-                            <option value="Garantia-Devolução">Garantia-Devolução</option>
-                            <option value="Cartão Cred Vip Debito">Cartão Cred Vip Debito</option>
-                            <option value="Produtos-Transferencia">Produtos-Transferencia</option>
-                            <option value="Transferencia">Transferencia</option>
-                            <option value="Cartão Crédito">Cartão Crédito</option>
+                            <?php foreach($movncOptions as $key => $value) print '<option value="'.$key.'">'.$value.'</option>' ?>
                         </select>
                     </div>
                 </div>
@@ -332,16 +85,15 @@
                         <label for="movip">PERCENTUAL DE DESCONTO</label>
                         <div class="group-input movip">
                             <span></span>
-                            <input name="movip" id="movip" type="text" inputmode="decimal">
+                            <input name="movip" id="movip" type="number" inputmode="decimal" step="0.01">
                         </div>
-
                     </div>
 
                     <div class="field-group ">
                         <label for="movde">VALOR COM DESCONTO</label>
                         <div class="group-input movde">
                             <span></span>
-                            <input name="movde" id="movde" type="number">
+                            <input name="movde" id="movde" type="number" inputmode="decimal" step="0.01">
                         </div>
                     </div>
                 </div>
@@ -379,14 +131,6 @@
                             <span></span>
                             <input name="fcalc" id="fcalc" type="number" readonly>
                         </div>
-                    </div>
-                </div>
-
-                <div class="field-group">
-                    <label for="codcl">CLIENTE</label>
-                    <div class="group-input codcl">
-                        <span></span>
-                        <input name="codcl" id="codcl" type="text" inputmode="numeric" minlength="10" data-base="clien01">
                     </div>
                 </div>
 

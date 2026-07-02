@@ -5,7 +5,7 @@ async function readBar() {
     if(!("BarcodeDetector" in window))
     {
         //Se não tem suporte ao BarcodeDetector, redireciona para digitação manual (iPhone)
-        window.location = 'index.php?view=search';
+        window.location = 'index.php?view=search-products';
         return;
     }
 
@@ -23,7 +23,7 @@ async function readBar() {
     }
     catch(e)
     {
-        window.location = 'index.php?view=search';
+        window.location = 'index.php?view=search-products';
         return;
     }
 
@@ -38,7 +38,7 @@ async function readBar() {
     }
     catch(e)
     {
-        window.location = 'index.php?view=search';
+        window.location = 'index.php?view=search-products';
         return;
     }
 
@@ -73,7 +73,7 @@ async function readBar() {
         catch(e)
         {
             //Se leitura falhar, redireciona para digitação manual
-            window.location = 'index.php?view=search';
+            window.location = 'index.php?view=search-products';
             return;
         }
         //Ativa loop contínuo de leitura da câmera.

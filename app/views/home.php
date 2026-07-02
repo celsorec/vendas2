@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Boas-vidas e iniciar venda -->
         <div class="logo <?=$_SESSION['logos']?>"></div>
-        
+
         <section class="init-order">
             <div class="welcome">Olá, <?=ucwords(strtolower($_SESSION['nomve']))?>!</div>
 

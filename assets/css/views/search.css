@@ -97,7 +97,9 @@
 }
 
 #search .container .input-search .result-ajax li span.codpr,
-#search .container .input-search .result-ajax li span.prcpr {
+#search .container .input-search .result-ajax li span.prcpr,
+#search .container .input-search .result-ajax li span.movqt,
+#search .container .input-search .result-ajax li span.subtt {
     display: none;
 }
 

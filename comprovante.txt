@@ -1,0 +1,18 @@
+    IDEAL MAGAZINE     {__DATA__} - {_HORA_}
+    Pagamento: {FORMA_PAGAMENTO}
+    Cliente: {CLIENTE}                      
+    ----------------------------------------
+    PRODUTO
+    QTD.|  GRADE | PRECO UNT. |        TOTAL
+    ----------------------------------------
+    {PRODUTO}                               
+    ----------------------------------------
+    TOTAL        |  DESCONTO  |  VALOR FINAL
+    {TOTAL_VENDA}|{PERCENTUAL}|{TOTAL_FINAL}
+    ----------------------------------------
+    ENTRADA    |   PARCELAS   | T. PARCELADO
+    {VLR_ENTRD}|{PARCELAMENTO}|{T_PARCELADO}
+    ----------------------------------------
+    QTD. DE ITENS: {TOTAL_ITENS}
+    ----------------------------------------
+    DOC.: {000000__}    {_____VENDEDOR_____}

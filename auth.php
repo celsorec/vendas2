@@ -25,7 +25,18 @@ else
         $_SESSION['store'] = $data['store']; //Nome da loja
         $_SESSION['login'] = true;
         $_SESSION['nomve'] = trim(substr($info[0]['nomve'], 0, -1)); //Remove espaços em branco e letra N
-        header("Location: index.php?view=home");
+
+        //SENHA PARA DESCONTO
+        $passDiscout = new DataRecord();
+        $passDiscout = $passDiscout->read(['desco', 'senli'], 'empre');
+
+        //Percentual de desconto e senha para aplicar desconto adicional encriptados em localStorage
+        echo
+            "<script>
+                localStorage.setItem('senli', '".base64_encode($passDiscout[0]['senli'])."');
+                localStorage.setItem('desco', '".base64_encode(substr($passDiscout[0]['desco'], 0, 2))."')
+                window.location.href = 'index.php?view=home';
+            </script>";
         exit;
     }
 }

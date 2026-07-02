@@ -9,10 +9,10 @@
             
             <div class="group-input nompr">
                 <span></span>
-                <input name="nompr" id="nompr" type="search" inputmode="numeric" maxlength="10" placeholder="Digite o código de barras" data-base="produ01">
+                <input name="nompr" id="nompr" type="search" inputmode="numeric" maxlength="10" placeholder="Digite o código de barras" data-file="search-ajax-products" data-base="produ01">
             </div>
 
-            <ul class="result-ajax" style="display: block;">
+            <ul class="result-ajax">
                 <!--INSERIR LISTA HTML AQUI-->
             </ul>
         </div>

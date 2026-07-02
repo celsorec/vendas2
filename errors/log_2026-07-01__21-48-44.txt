@@ -1,0 +1,1 @@
+[01-Jul-2026 21:48:44 America/Sao_Paulo] Erro [2] em C:\inetpub\wwwroot\vendas2\core\Database\DataRecord.php:21 - Array to string conversion

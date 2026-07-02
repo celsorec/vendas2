@@ -120,10 +120,13 @@ if($q !== '')
             $item['venpr'] =         $produ01[0]['venpr'];
             $item['prcpr'] =         $produ01[0]['prcpr'];
             $item['promo'] = (float) $produ01[0]['promo'];
-
+            
             //Se existe preço promocional, remove preço padrão ou o contrário
             if($item['promo'] > 0) unset($item['venpr']);
             else unset($item['promo']);
+
+            $item['movqt'] = (float) 1; //movqt não consta no cadastro de produtos; é informação para movYYYY
+            $item['subtt'] = (float) ($item['promo'] ?? $item['venpr']); //subtt não consta no cadastro de produtos; é informação cálculo de subtotal
 
             //Definindo estoque e grade
             $item['gragr'] = $key;
