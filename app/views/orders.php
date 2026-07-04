@@ -72,7 +72,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                         <span></span>
                         <select name="movnc" id="movnc" required="">
                             <option value="" disabled="" selected="">Selecione</option>
-                            <?php foreach($movncOptions as $key => $value) print '<option value="'.$key.'">'.$value.'</option>' ?>
+                            <?php foreach($movncOptions as $key => $value) print '<option value="'.$key.'">'.$value.'</option>'; ?>
                         </select>
                     </div>
                 </div>
