@@ -500,10 +500,6 @@
     overflow: hidden;
 }
 
-#orders .container .password-group .field-group:last-of-type {
-    border: 1px solid transparent;
-}
-
 #orders .container .password-group .field-group .lock-icon {
     background-image: url('../../images/lock-password-icon.svg');
     background-repeat: no-repeat;
@@ -534,7 +530,32 @@
     right: 0;
 }
 
-#orders .container .password-group .field-group button {
+#orders .container .password-group .field-group.anime-rotate {
+    animation: anime_rotate 0.3s ease;
+}
+
+@keyframes anime_rotate {
+    0%   {transform: rotate(0deg);}  
+    20%  {transform: rotate(3deg);  border-top-color: red;}
+    40%  {transform: rotate(-3deg); border-right-color: red;}
+    60%  {transform: rotate(3deg);  border-bottom-color:red;}
+    80%  {transform: rotate(-3deg); border-left-color: red;}
+    100% {transform: rotate(0deg);}
+}
+
+/* BTNS OK e Cancelar */
+#orders .container .password-group .btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+#orders .container .password-group .btn-group button {
     width: 47%;
     padding: 8px;
     color: #fff;
@@ -542,5 +563,5 @@
     font-weight: 400;
 }
 
-#orders .container .password-group .field-group button.btn-ok {background-color: var(--pri-color);}
-#orders .container .password-group .field-group button.btn-cancel {background-color: var(--sec-color);}
+#orders .container .password-group .btn-group button.btn-ok {background-color: var(--pri-color);}
+#orders .container .password-group .btn-group button.btn-cancel {background-color: var(--sec-color);}

@@ -58,9 +58,6 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                             data-file="search-ajax-client"
                             data-base="clien01"
                             pattern="[0-9]+\s-\s[A-Za-zÀ-ÿ\s]+"
-                            oninvalid="this.setCustomValidity('É preciso localizar e selecionar um cliente')"
-                            oninput="this.setCustomValidity('')"
-                            required
                         >
                     </div>
 
@@ -85,7 +82,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                         <label for="movip">PERCENTUAL DE DESCONTO</label>
                         <div class="group-input movip">
                             <span></span>
-                            <input name="movip" id="movip" type="number" inputmode="decimal" step="0.01">
+                            <input name="movip" id="movip" type="number" inputmode="decimal" step="1">
                         </div>
                     </div>
 
@@ -103,7 +100,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                         <label for="fentr">VALOR DA ENTRADA</label>
                         <div class="group-input fentr">
                             <span></span>
-                            <input name="fentr" id="fentr" type="number" inputmode="decimal" step="0.01">
+                            <input name="fentr" id="fentr" type="number" inputmode="decimal" step="0.01" required>
                         </div>
                     </div>
 
@@ -151,7 +148,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                 <span class="eye-icon"></span>
             </div>
 
-            <div class="field-group">
+            <div class="btn-group">
                 <button class="btn-ok">OK</button>
                 <button class="btn-cancel">CANCELAR</button>
             </div>

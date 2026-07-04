@@ -1,7 +1,6 @@
 /**
  * GERENCIANDO CHECKOUT
  */
-
 let selectPay = document.querySelector('.select-pay');            //Botão para revelar checkout
 let checkout  = document.querySelector('.checkout');              //Checkout
 let btnBack   = document.querySelector('.checkout .header span'); //Botão para ocultar checkout
@@ -16,8 +15,8 @@ if(checkout)
     let classCheckout = localStorage.getItem('classCheckout');
     if(classCheckout === null) localStorage.setItem('classCheckout', 'checkout hidden');
 
-    //Adiciona classe salva em localStorage
-    checkout.setAttribute('class', localStorage.getItem('classCheckout'));
+    //Adiciona classe que está salva em localStorage
+    //checkout.setAttribute('class', localStorage.getItem('classCheckout'));
 
     //Oculta checkout, conforme classe
     selectPay.addEventListener('click', () => 
@@ -31,6 +30,10 @@ if(checkout)
     {
         localStorage.setItem('classCheckout', 'checkout hidden');
         checkout.setAttribute('class', localStorage.getItem('classCheckout'));
+        
+        //Limpa campos e localStorage (checkoutItems); pode ter havido alterações na compra, já que o vendedor saiu do checkout
+        fieldsAll.forEach((element) => element.value = ''); //Limpa todos os campos
+        localStorage.removeItem('checkoutItems');           //Remove de localStorage
     });
 
     /**
@@ -97,6 +100,24 @@ if(checkout)
         let movdeInput = document.querySelector('input#movde'); //Campo valor final com desconto
         let movipInput = document.querySelector('input#movip'); //Campo de percentual de desconto
 
+        //PRODUTOS COM PREÇOS PROMOCIONAIS -> EXCLUIR DO DESCONTO
+        let promoInput = document.querySelectorAll('.promo input');
+        let promoValue = 0;
+        promoInput.forEach((element) =>
+        {
+            let movqtValue = element.parentElement.parentElement.querySelector('.movqt input').value;
+            promoValue += +element.value * +movqtValue;
+        });
+
+        //PRODUTOS COM PREÇOS não PROMOCIONAIS -> APLICAR DESCONTO
+        let venprInput = document.querySelectorAll('.venpr input'); 
+        let venprValue = 0;
+        venprInput.forEach((element) =>
+        {
+            let movqtValue = element.parentElement.parentElement.querySelector('.movqt input').value;
+            venprValue += +element.value * +movqtValue;
+        });
+
         //Somando subtotais dos produtos e preenchendo campo MOVDE com desconto
         let totalMovde = 0;
         productsList.venda1.forEach((element) => totalMovde += +element.subtt);
@@ -105,10 +126,13 @@ if(checkout)
         {
             if(movipInput.value > 0)
             {
-                let movipValue = +movipInput.value.replace(',', '.');                         //Lendo valor e ajustando separador de casa decimal
-                movdeInput.value = (totalMovde - (totalMovde / 100) * movipValue).toFixed(2); //Calculando valor com desconto aplicado   
-                checkoutItems.venda1['movde'] = movdeInput.value;                             //Atualizando valor com desconto em localStorage
-                activePassword(movipValue);                                                   //Função ativa container da senha para descontos especiais
+                let movipValue = +movipInput.value.replace(',', '.');              //Lendo valor e ajustando separador de casa decimal
+                totalMovde = +totalMovde - promoValue;                             //Subtraindo valores de produtos com preços promocionais do total da compra
+                movdeInput.value = (totalMovde - (totalMovde / 100) * movipValue); //Calculando valor com desconto aplicado   
+                movdeInput.value = (+movdeInput.value + promoValue).toFixed(2);    //Adicionando valores de produtos com preços promocionais ao total da compra
+
+                checkoutItems.venda1['movde'] = movdeInput.value;                  //Atualizando valor com desconto em localStorage
+                activePassword(movipValue);                                        //Função ativa container da senha para descontos especiais
             }
             else //Se campo é igual a 0 ou ficar em branco
             {
@@ -122,7 +146,9 @@ if(checkout)
             if(movdeInput.value > 0)
             {
                 let movdeValue = +movdeInput.value.replace(',', '.');                         //Lendo valor e ajustando separador de casa decimal
-                let percentDiscount = 100 - (movdeValue / totalMovde) * 100;                  //Verificando qual o percentual de desconto aplicado
+                let venprValueDiscount = movdeValue - promoValue;                             //Subtraindo valores de produtos promocionais do total da compra
+                let percentDiscount = ((venprValue - venprValueDiscount) / venprValue) * 100; //Verificando qual o percentual de desconto aplicado
+
                 checkoutItems.venda1['movip'] = percentDiscount.toFixed(2);                   //Atualizando percentual de desconto em localStorage
                 movipInput.value = isNaN(percentDiscount) ? '0' : percentDiscount.toFixed(2); //Preenchendo campo com percentual de desconto aplicado
                 activePassword(percentDiscount);                                              //Função ativa container da senha para descontos especiais
@@ -153,7 +179,7 @@ if(checkout)
     function activePassword(movipValue)
     {
         let passwordGroup = document.querySelector('.password-group');
-        let descoAtob     = atob(localStorage.getItem('desco')); //Desconto definido no GControl
+        let descoAtob     = +(atob(localStorage.getItem('desco'))); //Desconto definido no GControl
 
         if(movipValue > descoAtob) passwordGroup.classList.add('active');
         else passwordGroup.classList.remove('active');
@@ -182,6 +208,7 @@ if(checkout)
     {
         passwordGroup.classList.remove('active');
         movipInput.value = '';
+        passwordInput.value = '';
 
         //Dispara evento para atualizar localStorage; veja:(fieldsAll.forEach((element)) e oculta container da senha (efeito cascata)
         movipInput.dispatchEvent(new Event('change'));
@@ -198,15 +225,18 @@ if(checkout)
         }
         else
         {
-            passwordInput.value = '';
-            movipInput.value    = '';                          //Zerando desconto
-            movipInput.dispatchEvent(new Event('change'));     //Dispara evento para atualizar localStorage; veja:(fieldsAll.forEach((element))
-            displayMessage('Senha incompatível.', 'alert');    //Mensagem de retorno
+            //Anima campo de senha -> rotate()
+            let passwordField = document.querySelector('.password-group .field-group');
+                passwordField.classList.add('anime-rotate');
+                setTimeout(() => passwordField.classList.remove('anime-rotate'), 300);
+            
+            //Mensagem de retorno
+            displayMessage('Senha incompatível.', 'alert'); 
         }
     });
 
     /**
-     * Calculando entrada e o restante a parcelar
+     * Calculando entrada e o restante financiado
      */
     let fentrInput = document.querySelector('.fentr input'); //Valor da entrada
     let ftotaInput = document.querySelector('.ftota input'); //Restante
@@ -242,16 +272,37 @@ if(checkout)
 
     fnpreInput.addEventListener('input', () =>
     {
+        //Se fnpreInput.value é vazio...
+        if(ftotaInput.value == '') ftotaInput.value = document.querySelector('.checkout .movde input').value; //Movde com desconto
+        if(ftotaInput.value == '') ftotaInput.value = document.querySelector('.movde input').value;           //Movde sem desconto
+
         fcalcInput.value = (+ftotaInput.value / +fnpreInput.value).toFixed(2);
         fcalcInput.dispatchEvent(new Event('input'));
     });
 
     /**
-     * DEFINIR QUAIS CAMPOS SÃO OBRIGATÓRIOS NO CHECKOUT
-     * EXEMPLO SE NÃO É A VISTA, DEVE TER UM CLIENTE SELECIONADO
-     * 
-     * OCULTAR CHECKOUT AO ACESSAR CARRINHO DE COMPRAS
-     * 
-     * RETIRAR DO DESCONTO PRODUTO COM PREÇO PROMOCIONAL
+     * Quando é obrigatório informar o cliente
      */
+    let movncSelect = document.querySelector('#movnc');
+    let codclInput  = document.querySelector('#codcl');
+
+    //2 formas de pagamento exigem registar o cliente: A prazo e Cartão Fidelidade
+    movncSelect.addEventListener('change', () =>
+    {
+        if(movncSelect.value == 'A prazo' || movncSelect.value == 'Cartão Fidelidade')
+        {
+            codclInput.setAttribute('required', '');
+            codclInput.setCustomValidity('É preciso localizar e selecionar um cliente');
+        }
+        else
+        {
+            codclInput.removeAttribute('required');
+            codclInput.setCustomValidity('');
+        }
+    });
+    
+    //Caso já esteja campo o campo preenchido
+    if(movncSelect.value == 'A prazo' || movncSelect.value == 'Cartão Fidelidade') codclInput.setAttribute('required', '');
+    codclInput.addEventListener('invalid', () => codclInput.setCustomValidity('É preciso localizar e selecionar um cliente'));
+    codclInput.addEventListener('input',   () => codclInput.setCustomValidity(''));
 }
