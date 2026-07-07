@@ -1,14 +1,21 @@
 ﻿<?php
 
-require_once 'Database/DataRecord.php';
-require_once 'config.php';
-require_once 'Message/MessageHelper.php';
+require_once 'settings.php';
+require_once 'Core/Database/DataRecord.php';
+require_once 'Core/Message/MessageHelper.php';
 
 $pdo  = (new DataRecord)->getConnection();
 $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_ADD_SLASHES);
 
+require_once 'app/modules/config-pay.php';
+
 //Definindo data no servidor na hora da venda
 $data['movda'] = date('Y-m-d');
+$data['movpe'] = 'C';
+$data['movtp'] = 'S';
+$data['comis'] = '3';
+$data['vende'] = $_SESSION['codve'];
+$data['movfu'] = $_SESSION['codve'];
 
 //CONVERTENDO NOMES: NOME ORIGINAL VEM DA TABELA DE ORIGEM, NOVO NOME É PARA TABELA DE DESTINO
 $data['movfo'] = $data['codcl']; //Cliente             -> string
@@ -31,17 +38,17 @@ unset($data['subtotal']);  //Cálculo para cada produto; deveria ser removido?
 //RENDER PRINT
 $movpr = $data['movpr'];
 $connect = new DataRecord();
-$movfu = $connect->read('vencr', ['nomve'], "codve='".$data['movfu']."' AND SQL_DELETED='F'"); //Nome vendedor
+//$movfu = $connect->read('vencr', ['nomve'], "codve='".$data['movfu']."' AND SQL_DELETED='F'"); //Nome vendedor
 
 //Referências aos nomes das tabelas do banco de dados
-$empre = $connect->read('empre', ['exerc', 'codem']);
+$empre = $connect->read(['exerc', 'codem'], 'empre');
 $empre = $empre[0]['exerc'] . $empre[0]['codem'];
 
 //Nomes produtos pelo código
 $nompr = [];
 foreach($movpr as $codpr)
 {
-    $nompr[] = $connect->read('produ01', ['nompr'], "codpr='".$codpr."'");
+    $nompr[] = $connect->read(['nompr'], 'produ01', "WHERE codpr='".$codpr."'");
 }
 
 //Simplificando array nomes produtos $nompr => $nomeProdct
@@ -63,10 +70,12 @@ try
     
     //Código numbl para montar código do Faturamento (numbl . data['vende'])
     $movfa = new DataRecord;
-    $movfa = $movfa->read('empre', ['numbl']);
+    $movfa = $movfa->read(['numbl'], 'empre');
     if(!$movfa || !isset($movfa[0]['numbl']))
     {
-        throw new Exception('Não foi possível obter o número de faturamento.');
+        MessageHelper::setMessage('Não foi possível obter o número de faturamento', 'success');
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        //throw new Exception('Não foi possível obter o número de faturamento.');
     }
 
     //Atualizando numbl na tabela empre
@@ -74,12 +83,14 @@ try
     $numbl = $numbl->update('empre', ['numbl' => $movfa[0]['numbl']+1], '1');
     if($numbl !== true)
     {
-        throw new Exception('Não foi possível atualizar os dados da venda.');
+        MessageHelper::setMessage('Não foi possível atualizar os dados da venda', 'success');
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        //throw new Exception('Não foi possível atualizar os dados da venda.');
     }
     
     //Buscando parâmetro para compoição de MOVFA (se MOVFA tem em sua composição o número do vendedor)
     $param = new DataRecord;
-    $param = $param->read('param', ['param']);
+    $param = $param->read(['param'], 'param');
     $param = $param[0]['param'][486];
 
     //Montagem do código do Faturamento com ou sem código do vendedor (MOVFA + CODVE)
@@ -107,7 +118,10 @@ try
         $result = $saveGrade->save('grd'.$empre, $value);
         if ($result !== true)
         {
-            throw new Exception('Falha ao salvar na tabela grd'.$empre.'.');
+            MessageHelper::setMessage('Falha ao salvar na tabela grd'.$empre, 'alert');
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+            exit;
+            //throw new Exception('Falha ao salvar na tabela grd'.$empre.'.');
         }
     }
     //TABELA GRD_ANO
@@ -122,6 +136,8 @@ try
     $data['mlarg'] = 0.00;
     $data['caxme'] = 0.00;
     
+
+
     //Percorrendo e separando cada produto para gravação em banco de dados
     $dataProducts = [];
     foreach($movpr as $index => $item)
@@ -183,16 +199,17 @@ try
     //Salvando produtos no banco de dados
     foreach($dataProducts as $key => $value)
     {
-        $tableName = array_key_first($value);
+        //Removendo gragr já gravado na tabela grdYYYY
         array_shift($value);
-        unset($value['gragr']);
     
         //Banco de dados
         $save = new DataRecord;
-        $result = $save->save($tableName, $value);
+        $result = $save->save('mov'.$empre, $value);
         if($result !== true)
         {
-            throw new Exception('Falha ao salvar produto.');
+            MessageHelper::setMessage('Falha ao salvar produto', 'alert');
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+            exit;
         }
     }
 
@@ -215,11 +232,9 @@ catch(Exception $e)
 /**
  * MONTAGEM DO COMPROVANTE DE VENDAS
  */
-
-//Detalhes da venda
 $prdto = ''; //Informações da venda
 $movde = 0;  //Para calcular valor original sem desconto
-$totalConfirm = 0;
+$tProd = 0;  //Total de itens vendidos
 foreach($data['movpr'] as $key => $prod)
 {
     $prdto .= substr($prod.' '.$nomeProdct[$key], 0, 40) . PHP_EOL . '    ';                                 //Código e nome do produto
@@ -228,12 +243,9 @@ foreach($data['movpr'] as $key => $prod)
     $prdto .= str_pad(number_format($data['movvc'][$key], 2), 11, ' ', STR_PAD_LEFT) . ' |';                 //Valor unitário
     $prdto .= str_pad(number_format($data['movvc'][$key] * $data['movqt'][$key], 2), 13, ' ', STR_PAD_LEFT); //Subtotal (qtd * preço)
     if($key+1 < count($data['movpr'])) $prdto .= PHP_EOL . '    ';
-
-    //Cálculo do valor original sem desconto
-    $movde += $data['movvc'][$key] * $data['movqt'][$key];
-
-    //
-    $totalConfirm += $data['movqt'][$key];
+    
+    $movde += $data['movvc'][$key] * $data['movqt'][$key]; //Cálculo do valor original sem desconto
+    $tProd += $data['movqt'][$key];
 }
 
 //Strings que serão substituídas no arquivo comprovante.txt
@@ -257,19 +269,19 @@ $search =
 //Informações que substituirão strings acima
 $replace =
 [
-    date('d/m/Y'),                                                                                                //Data da venda
-    date('H:i:s'),                                                                                                //Hora da venda
-    str_pad(substr($data['movnc'], 0, 17), 17, ' '),                                                              //Forma de pagamento
-    substr($data['movfo'], 0, 32),                                                                                //Cliente
-    str_pad(number_format($movde, 2), 13, ' '),                                                                   //Valor total da venda
-    str_pad($data['movip'].'%', 12, ' ', STR_PAD_BOTH),                                                           //Percentual de desconto
-    str_pad(number_format($movde - (($movde / 100) * ((float) $data['movip'])), 2), 13, ' ', STR_PAD_LEFT),       //Valor final com desconto
-    str_pad(number_format(((float) $data['fentr']), 2), 11, ' '),                                                 //Valor da entrada
-    str_pad($data['fnpre'].'x de '.$data['fcalc'], 14, ' ', STR_PAD_BOTH),                                        //Quantidade e valores das parcelas
-    str_pad($data['ftota'], 13, ' ', STR_PAD_LEFT),                                                               //Total da parcela
-    $totalConfirm,                                                                                                //Total de itens comprados para conferênia
-    str_pad($movfa, 10, ' '),                                                                                     //Número da venda
-    str_pad(substr($data['movfu'].' | '.trim(substr($movfu[0]['nomve'], 0, -1)), 0, 22), 20, ' ', STR_PAD_LEFT)   //Vendedor
+    date('d/m/Y'),                                                                                          //Data da venda
+    date('H:i:s'),                                                                                          //Hora da venda
+    str_pad(substr($data['movnc'], 0, 17), 17, ' '),                                                        //Forma de pagamento
+    substr($data['movfo'], 0, 32),                                                                          //Cliente
+    str_pad(number_format($movde, 2), 13, ' '),                                                             //Valor total da venda
+    str_pad($data['movip'].'%', 12, ' ', STR_PAD_BOTH),                                                     //Percentual de desconto
+    str_pad(number_format($movde - (($movde / 100) * ((float) $data['movip'])), 2), 13, ' ', STR_PAD_LEFT), //Valor final com desconto
+    str_pad(number_format(((float) $data['fentr']), 2), 11, ' '),                                           //Valor da entrada
+    str_pad($data['fnpre'].'x de '.$data['fcalc'], 14, ' ', STR_PAD_BOTH),                                  //Quantidade e valores das parcelas
+    str_pad($data['ftota'], 13, ' ', STR_PAD_LEFT),                                                         //Total da parcela
+    $tProd,                                                                                                 //Total de itens comprados para conferênia
+    str_pad($movfa, 10, ' '),                                                                               //Número da venda
+    str_pad($_SESSION['codve'].' | '.$_SESSION['nomve'], 20, ' ', STR_PAD_LEFT)                             //Vendedor
 ];
 
 //Importando matriz do comprovante e inserindo informações reais

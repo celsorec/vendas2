@@ -26,7 +26,7 @@ if(htmlProdu)
                     </div>
 
                     <!-- OCULTOS -->
-                    <input type="hidden" name="gragr[]" value="${element.prcpr}" data-index="${index}">
+                    <input type="hidden" name="prcpr[]" value="${element.prcpr}" data-index="${index}">
                     
                     <div class="bottom-group">
                         <div class="movqt">
@@ -37,7 +37,7 @@ if(htmlProdu)
 
                         <div class="${(element.hasOwnProperty('venpr')?'venpr':'promo')}">
                             <span class="subtt" data-index="${index}">${element.subtt}</span>
-                            <input type="hidden" name="${(element.hasOwnProperty('venpr')?'venpr':'promo')}[]" value="${+(element.venpr ?? element.promo)}" data-index="${index}">
+                            <input type="hidden" name="venpr[]" value="${+(element.venpr ?? element.promo)}" data-index="${index}">
                         </div>
                         <div class="delete">
                             <span class="btn" data-index="${index}"></span>

@@ -154,6 +154,10 @@
     display: inline-block;
 }
 
+#orders .container form .products .product .bottom-group .promo span {
+    color: var(--pri-color);
+}
+
 #orders .container form .products .product .bottom-group .promo span::before,
 #orders .container form .products .product .bottom-group .venpr span::before {
     content: 'R$ ';
@@ -396,6 +400,7 @@
 #orders .container form .checkout .field-group .fcalc span {border-right: 1px solid #ccc;}
 
 /* background individual */
+#orders .container form .checkout .field-group .group-input.mopas span {background-image: url('../../images/mopas-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.movnc span {background-image: url('../../images/movnc-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.movip span {background-image: url('../../images/movip-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.movde span {background-image: url('../../images/movde-payment-icon.svg');}

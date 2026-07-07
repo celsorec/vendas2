@@ -7,7 +7,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
 
 <div id="orders" class="view">
     <div class="container">        
-        <form action="">
+        <form action="process.php" method="POST">
             <div class="products">
                 <header>
                     <h2>PRODUTOS ADICIONADOS</h2>
@@ -41,6 +41,18 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                 <div class="subheader">
                     <div class="label-total">TOTAL DA VENDA</div>
                     <div class="value-total"></div>
+                </div>
+
+                <div class="field-group">
+                    <label for="mopas">ORIGEM DA VENDA</label>
+                    <div class="group-input mopas">
+                        <span></span>
+                        <select name="mopas" id="mopas" required>
+                            <option value="" disabled="" selected="">Selecione</option>
+                            <option value="o">On-line</option>
+                            <option value="a">Presencial</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="field-group input-search">
@@ -100,7 +112,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                         <label for="fentr">VALOR DA ENTRADA</label>
                         <div class="group-input fentr">
                             <span></span>
-                            <input name="fentr" id="fentr" type="number" inputmode="decimal" step="0.01" required>
+                            <input name="fentr" id="fentr" type="number" inputmode="decimal" step="0.01">
                         </div>
                     </div>
 

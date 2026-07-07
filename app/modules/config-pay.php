@@ -1,6 +1,8 @@
 <?php
 
-//Definindo valor de MOVCR como 'S'
+/**
+ * Definindo valor de MOVCR como 'S'
+ */
 $data['movcr'] = '';
 $movcrValid =
 [
@@ -16,7 +18,9 @@ $movcrValid =
 ];
 if(in_array($data['movnc'], $movcrValid)) $data['movcr'] = 'S';
 
-//Adicionar 'Letra' a trans conforme movnc.value
+/**
+ * Adicionar 'Letra' a trans conforme movnc.value
+ */
 $movncLetters =                       //Mapeamento de letras para o campo 'trans'
 [
     'A prazo'                 => '',  //Se pagar com cartão = O, C, V...?
@@ -43,6 +47,27 @@ $movncLetters =                       //Mapeamento de letras para o campo 'trans
 //Índices e valores de movnc são iguais aos índices de movncLetters
 $data['trans'] = $movncLetters[$data['movnc']] ?? '';
 
-//Grava 'v' ou 'p' na coluna MOVVP, conforme a forma de pagamento
+/**
+ * Grava 'v' ou 'p' na coluna MOVVP, conforme a forma de pagamento
+ */
 if($data['movnc'] === 'A prazo' || $data['movnc'] === 'Cartão Fidelidade') $data['movvp'] = 'p';
 else $data['movvp'] = 'v';
+
+/**
+ * Definindo o valor do campo fvist
+ */
+$data['fvist'] = '';
+$installmentMetohds = //Métodos de pagamento que modificam o valor de FVIST
+[
+    'A prazo',
+    'Cartão Débito',
+    'Cartão Fidelidade',
+    'Cartão Visanet',
+    'Cartão Mastercard',
+    'Cartão American Express',
+    'Cartão Credishop',
+    'Cartão Hipercard',
+    'Cartão Outros',
+    'Cartão Crédito'
+];
+if(in_array($data['movnc'], $installmentMetohds)) $data['fvist'] = $data['movde'];

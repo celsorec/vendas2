@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="14.837714"
+   height="8.9026394"
+   viewBox="0 0 3.925812 2.3554901"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="mopas-payment-icon.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="24.410976"
+     inkscape:cx="11.511215"
+     inkscape:cy="1.6590897"
+     inkscape:window-width="1584"
+     inkscape:window-height="861"
+     inkscape:window-x="2208"
+     inkscape:window-y="360"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.217193,-184.39697)">
+    <path
+       d="m 80.217193,186.75246 v -2.35549 h 0.392581 v 2.35549 z m 2.748068,0 -0.279713,-0.27481 0.706646,-0.70664 h -2.389839 v -0.39258 h 2.389839 l -0.701739,-0.70665 0.274806,-0.27481 1.177744,1.17775 z"
+       id="path1"
+       style="stroke-width:0.00661457;fill:#808080;fill-opacity:1" />
+  </g>
+</svg>

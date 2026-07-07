@@ -25,6 +25,7 @@ else
         $_SESSION['store'] = $data['store']; //Nome da loja
         $_SESSION['login'] = true;
         $_SESSION['nomve'] = trim(substr($info[0]['nomve'], 0, -1)); //Remove espaços em branco e letra N
+        $_SESSION['codve'] = $info[0]['codve'];
 
         //SENHA PARA DESCONTO
         $passDiscout = new DataRecord();
