@@ -22,7 +22,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                     
                     <div class="movde">
                         <span>0.00</span>
-                        <input type="hidden" name="movde" value="0.00" >
+                        <input type="hidden" name="movde">
                     </div>
                 </div>
 
@@ -99,10 +99,10 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                     </div>
 
                     <div class="field-group ">
-                        <label for="movde">VALOR COM DESCONTO</label>
-                        <div class="group-input movde">
+                        <label for="desco">VALOR COM DESCONTO</label>
+                        <div class="group-input desco">
                             <span></span>
-                            <input name="movde" id="movde" type="number" inputmode="decimal" step="0.01">
+                            <input name="desco" id="desco" type="number" inputmode="decimal" step="0.01">
                         </div>
                     </div>
                 </div>

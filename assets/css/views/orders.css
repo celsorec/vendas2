@@ -379,7 +379,7 @@
     padding-left: 45px;
 }
 
-#orders .container form .checkout .field-group .group-input span  {
+#orders .container form .checkout .field-group .group-input span {
     padding: 5px;
     width: 35px;
     height: 100%;
@@ -403,12 +403,12 @@
 #orders .container form .checkout .field-group .group-input.mopas span {background-image: url('../../images/mopas-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.movnc span {background-image: url('../../images/movnc-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.movip span {background-image: url('../../images/movip-payment-icon.svg');}
-#orders .container form .checkout .field-group .group-input.movde span {background-image: url('../../images/movde-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.desco span {background-image: url('../../images/desco-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.fentr span {background-image: url('../../images/fentr-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.ftota span {background-image: url('../../images/ftota-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.fnpre span {background-image: url('../../images/fnpre-payment-icon.svg');}
 #orders .container form .checkout .field-group .group-input.fcalc span {background-image: url('../../images/fcalc-payment-icon.svg');}
-#orders .container form .checkout .field-group .group-input.codcl span {background-image: url('../../images/codcl-payment-icon.svg');}
+#orders .container form .checkout .field-group .group-input.codcl span {background-image: url('../../images/search-payment-icon.svg');}
 
 /* Botão finalizar venda */
 #orders .container form .checkout .endcheckout {

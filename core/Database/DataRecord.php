@@ -62,7 +62,7 @@ class DataRecord
         catch(PDOException $e)
         {
             MessageHelper::setMessage($e->getMessage(), 'alert');
-            return false;
+            throw($e);
         }
     }
 
@@ -94,7 +94,7 @@ class DataRecord
         catch(PDOException $e)
         {
             MessageHelper::setMessage($e->getMessage(), 'alert');
-            return false;
+            throw($e);
         }
     }
 
@@ -114,7 +114,7 @@ class DataRecord
         catch(PDOException $e)
         {
             MessageHelper::setMessage($e->getMessage(), 'alert');
-            return false;
+            throw($e);
         }
     }
 

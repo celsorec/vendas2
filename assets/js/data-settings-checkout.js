@@ -1,9 +1,9 @@
 /**
  * GERENCIANDO CHECKOUT
  */
-let selectPay = document.querySelector('.select-pay');            //Botão para revelar checkout
-let checkout  = document.querySelector('.checkout');              //Checkout
-let btnBack   = document.querySelector('.checkout .header span'); //Botão para ocultar checkout
+let selectPay  = document.querySelector('.select-pay');            //Botão para revelar checkout
+let checkout   = document.querySelector('.checkout');              //Checkout
+let btnBack    = document.querySelector('.checkout .header span'); //Botão para ocultar checkout
 
 if(checkout)
 {
@@ -41,12 +41,12 @@ if(checkout)
      */
     function setValueCheckout()
     {        
-        let movdeValue = JSON.parse(localStorage.getItem('productsList')); //Buscando dados em localStorage
-        if(!movdeValue) return;                                            //Evitando erros no console
+        let descoValue = JSON.parse(localStorage.getItem('productsList')); //Buscando dados em localStorage
+        if(!descoValue) return;                                            //Evitando erros no console
 
         //Calculando total da compra
         let sumSubtt = 0;
-        movdeValue.venda1.forEach((element) => sumSubtt += +element.subtt);
+        descoValue.venda1.forEach((element) => sumSubtt += +element.subtt);
 
         //Exibindo total da compra
         let totalValue = document.querySelector('.value-total');
@@ -77,7 +77,7 @@ if(checkout)
             {
                 //Chamando função Aplicar Desconto
                 if(element.name === 'movip') applyDiscount('movip');
-                if(element.name === 'movde') applyDiscount('movde');
+                if(element.name === 'desco') applyDiscount('desco');
 
                 checkoutItems.venda1[element.name] = element.value;                   //Lê informações digitadas e adiciona-as ao objeto
                 localStorage.setItem('checkoutItems', JSON.stringify(checkoutItems)); //Salva informações do input em localStorage
@@ -97,7 +97,7 @@ if(checkout)
         let productsList = JSON.parse(localStorage.getItem('productsList'));
         if(!productsList) return;
 
-        let movdeInput = document.querySelector('input#movde'); //Campo valor final com desconto
+        let descoInput = document.querySelector('input#desco'); //Campo valor final com desconto
         let movipInput = document.querySelector('input#movip'); //Campo de percentual de desconto
 
         //PRODUTOS COM PREÇOS PROMOCIONAIS -> EXCLUIR DO DESCONTO
@@ -118,35 +118,35 @@ if(checkout)
             venprValue += +element.value * +movqtValue;
         });
 
-        //Somando subtotais dos produtos e preenchendo campo MOVDE com desconto
-        let totalMovde = 0;
-        productsList.venda1.forEach((element) => totalMovde += +element.subtt);
+        //Somando subtotais dos produtos e preenchendo campo DESCO
+        let totalDesco = 0;
+        productsList.venda1.forEach((element) => totalDesco += +element.subtt);
 
         if(inputActive === 'movip') //Se alteração é no campo percentual de desconto
         {
             if(movipInput.value > 0)
             {
                 let movipValue = +movipInput.value.replace(',', '.');              //Lendo valor e ajustando separador de casa decimal
-                totalMovde = +totalMovde - promoValue;                             //Subtraindo valores de produtos com preços promocionais do total da compra
-                movdeInput.value = (totalMovde - (totalMovde / 100) * movipValue); //Calculando valor com desconto aplicado   
-                movdeInput.value = (+movdeInput.value + promoValue).toFixed(2);    //Adicionando valores de produtos com preços promocionais ao total da compra
+                totalDesco = +totalDesco - promoValue;                             //Subtraindo valores de produtos com preços promocionais do total da compra
+                descoInput.value = (totalDesco - (totalDesco / 100) * movipValue); //Calculando valor com desconto aplicado   
+                descoInput.value = (+descoInput.value + promoValue).toFixed(2);    //Adicionando valores de produtos com preços promocionais ao total da compra
 
-                checkoutItems.venda1['movde'] = movdeInput.value;                  //Atualizando valor com desconto em localStorage
+                checkoutItems.venda1['desco'] = descoInput.value;                  //Atualizando valor com desconto em localStorage
                 activePassword(movipValue);                                        //Função ativa container da senha para descontos especiais
             }
             else //Se campo é igual a 0 ou ficar em branco
             {
                 movipInput.value = '';
-                movdeInput.value = '';
-                checkoutItems.venda1['movde'] = '';
+                descoInput.value = '';
+                checkoutItems.venda1['desco'] = '';
             }
         }
         else //Se alteração é no campo com o valor
         {
-            if(movdeInput.value > 0)
+            if(descoInput.value > 0)
             {
-                let movdeValue = +movdeInput.value.replace(',', '.');                         //Lendo valor e ajustando separador de casa decimal
-                let venprValueDiscount = movdeValue - promoValue;                             //Subtraindo valores de produtos promocionais do total da compra
+                let descoValue = +descoInput.value.replace(',', '.');                         //Lendo valor e ajustando separador de casa decimal
+                let venprValueDiscount = descoValue - promoValue;                             //Subtraindo valores de produtos promocionais do total da compra
                 let percentDiscount = ((venprValue - venprValueDiscount) / venprValue) * 100; //Verificando qual o percentual de desconto aplicado
 
                 checkoutItems.venda1['movip'] = percentDiscount.toFixed(2);                   //Atualizando percentual de desconto em localStorage
@@ -156,7 +156,7 @@ if(checkout)
             else //Se campo é igual a 0 ou ficar em brancos
             {
                 movipInput.value = '';
-                movdeInput.value = '';
+                descoInput.value = '';
                 checkoutItems.venda1['movip'] = '';
                 activePassword(0); //Para ocultar container da senha
             }
@@ -244,15 +244,15 @@ if(checkout)
     fentrInput.addEventListener('input', () =>
     {
         //Valor com desconto
-        let movdeInput = document.querySelector('.checkout .movde input');
+        let descoInput = document.querySelector('.checkout .desco input');
         
-        //Valor com desconto está em branco, usa valor sem desconto (movde fora do checkout)
-        if(movdeInput.value == '')  movdeInput = document.querySelector('.movde input');
+        //Valor com desconto está em branco, usa valor sem desconto (movde)
+        if(descoInput.value == '') descoInput = document.querySelector('.movde input');
         
         //Calculando restante; Total financiado
         if(fentrInput.value > 0)
         {
-            ftotaInput.value = ((+movdeInput.value) - +fentrInput.value).toFixed(2);
+            ftotaInput.value = ((+descoInput.value) - +fentrInput.value).toFixed(2);
         }
         else ftotaInput.value = ''; //Se valor da entrada (fentrInput) é igual a 0 ou está em branco
         ftotaInput.dispatchEvent(new Event('change'));
@@ -273,8 +273,8 @@ if(checkout)
     fnpreInput.addEventListener('input', () =>
     {
         //Se fnpreInput.value é vazio...
-        if(ftotaInput.value == '') ftotaInput.value = document.querySelector('.checkout .movde input').value; //Movde com desconto
-        if(ftotaInput.value == '') ftotaInput.value = document.querySelector('.movde input').value;           //Movde sem desconto
+        if(ftotaInput.value == '') ftotaInput.value = document.querySelector('.checkout .desco input').value; //Valor com desconto
+        if(ftotaInput.value == '') ftotaInput.value = document.querySelector('.movde input').value;           //Valor sem desconto
 
         fcalcInput.value = (+ftotaInput.value / +fnpreInput.value).toFixed(2);
         fcalcInput.dispatchEvent(new Event('input'));
