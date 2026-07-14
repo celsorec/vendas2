@@ -21,23 +21,17 @@ else
 
     if(is_array($info))
     {
+        //Informações da loja selecionada
+        $connect   = new DataRecord();
+        $dataStore = $connect->read(['nofem'], 'empre');
+
         $_SESSION['logos'] = strtolower(str_replace(' ', '', $data['store'])); //Para pegar um ou outro logotipo
-        $_SESSION['store'] = $data['store']; //Nome da loja
-        $_SESSION['login'] = true;
+        $_SESSION['nofem'] = $dataStore[0]['nofem']; //Nome fantasia da loja
         $_SESSION['nomve'] = trim(substr($info[0]['nomve'], 0, -1)); //Remove espaços em branco e letra N
         $_SESSION['codve'] = $info[0]['codve'];
+        $_SESSION['login'] = true;
 
-        //SENHA PARA DESCONTO
-        $passDiscout = new DataRecord();
-        $passDiscout = $passDiscout->read(['desco', 'senli'], 'empre');
-
-        //Percentual de desconto e senha para aplicar desconto adicional encriptados em localStorage
-        echo
-            "<script>
-                localStorage.setItem('senli', '".base64_encode($passDiscout[0]['senli'])."');
-                localStorage.setItem('desco', '".base64_encode(substr($passDiscout[0]['desco'], 0, 2))."')
-                window.location.href = 'index.php?view=home';
-            </script>";
+        header("Location: index.php?view=home");
         exit;
     }
 }

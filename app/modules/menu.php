@@ -23,13 +23,13 @@ $menu =
         'class' => 'search-menu disabled',
         'child' => []
     ],
-    [
+    /* [
         //Trocar produtos
         'label' => 'Troca',
         'url'   => '?view=swap',
         'class' => 'swap-menu disabled',
         'child' => []
-    ],
+    ], */
     [
         //Mais opções do menu principal
         'label' => 'Mais',

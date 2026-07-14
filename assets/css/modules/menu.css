@@ -62,18 +62,23 @@
 }
 
 .mainmenu .menu .home-menu .icon        {background-image: url('../../images/home-icon-gray.svg');}
+.mainmenu .menu .home-menu:hover .icon {background-image: url('../../images/home-icon-blue.svg');}
 .mainmenu .menu .home-menu.active .icon {background-image: url('../../images/home-icon-blue.svg');}
 
 .mainmenu .menu .orders-menu .icon        {background-image: url('../../images/order-icon-gray.svg');}
+.mainmenu .menu .orders-menu:hover .icon {background-image: url('../../images/order-icon-blue.svg');}
 .mainmenu .menu .orders-menu.active .icon {background-image: url('../../images/order-icon-blue.svg');}
 
 .mainmenu .menu .search-menu .icon        {background-image: url('../../images/search-icon-gray.svg');}
+.mainmenu .menu .search-menu:hover .icon {background-image: url('../../images/search-icon-blue.svg');}
 .mainmenu .menu .search-menu.active .icon {background-image: url('../../images/search-icon-blue.svg');}
 
 .mainmenu .menu .swap-menu .icon        {background-image: url('../../images/swap-icon-gray.svg');}
+.mainmenu .menu .swap-menu:hover .icon {background-image: url('../../images/swap-icon-blue.svg');}
 .mainmenu .menu .swap-menu.active .icon {background-image: url('../../images/swap-icon-blue.svg');}
 
 .mainmenu .menu .plus-menu .icon        {background-image: url('../../images/menu-icon-gray.svg');}
+.mainmenu .menu .plus-menu:hover .icon {background-image: url('../../images/menu-icon-blue.svg');}
 .mainmenu .menu .plus-menu.active .icon {background-image: url('../../images/menu-icon-blue.svg');}
 
 /* Texto */

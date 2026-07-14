@@ -31,10 +31,11 @@ else
     exit;
 }
 
-require_once 'app/modules/config-checkout.php';
+//Comprovante de impressão e Configurações de pagamento
 require_once 'app/modules/config-printing.php';
+require_once 'app/modules/config-checkout.php';
 
-//Definindo data no servidor na hora da venda
+//Definindo valores padrão
 $data['movda'] = date('Y-m-d');
 $data['movpe'] = 'C';
 $data['movtp'] = 'S';
@@ -47,7 +48,6 @@ $data['movfo'] = $data['codcl']; //Cliente             -> string
 $data['movpr'] = $data['codpr']; //Códigos do produto  -> array
 $data['movct'] = $data['prcpr']; //Preços de custo (?) -> array
 $data['movvc'] = $data['venpr']; //Preços de venda (?) -> array
-$data['movde'] = ($data['desco'] > 0) ? $data['desco'] : $data['movde'];
 
 //Removendo convertidos acima
 unset($data['codcl']);
@@ -120,7 +120,7 @@ try
                 //Selecionado apenas o código do cliente para salvar no banco de dados
                 if($key == 'movfo')
                 {
-                    $movfo = explode(' | ', $value,);
+                    $movfo = explode(' - ', $value,);
                     $movfo = $movfo[0];
     
                     $dataSave[$key] = $movfo;
@@ -164,13 +164,29 @@ try
 
     //Commit
     $pdo->commit();
+    
+    //Venda realizada: limpando carrinho de compras e checkout; voltando à página anterior
+    echo
+    "<script>
+        localStorage.removeItem('checkoutItems');
+        localStorage.removeItem('productsList');
+        window.location.href = 'index.php?view=home';
+    </script>";
+
     MessageHelper::setMessage('Venda realizada com sucesso', 'success');
-    header("Location: " . $_SERVER['HTTP_REFERER']);
 }
 catch(Exception $e)
 {
     if($pdo->inTransaction()) $pdo->rollBack();
     MessageHelper::setMessage('ERRO: ' . $e->getMessage(), 'alert');
     header("Location: " . $_SERVER['HTTP_REFERER']);
-    exit;
 }
+
+//FALTA COMPARAR VENDA NO BANCO DE DADOS NO APP ATUAL E NO NOVO
+//ATUALIZA JSON ONLINE NA HOSTINGER COM INFORMAÇÕES DAS LOJAS PARA LOGIN
+//TESTAR COM O CELULAR
+//CRIAR PÁGINA SOBRE, INFORMANDO SOBRE AS MUDANÇAS E NOVIDADES
+//FAZER APP PWA
+//IMPEDIR VENDA VAZIA (NO BACKEND?)
+//SOLICITANDO SELEÇÃO DE CLIENTE MESMO DEPOIS DE CLIENTE JÁ SELECIONADO
+//OCULTAR .endcheckout BTN SE SENHA DE DESCONTO NÃO ESTIVER CORRETA E AO ACIONAR BOX DA SENHA

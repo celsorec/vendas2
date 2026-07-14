@@ -54,6 +54,11 @@ if($data['movnc'] === 'A prazo' || $data['movnc'] === 'Cartão Fidelidade') $dat
 else $data['movvp'] = 'v';
 
 /**
+ * Valor final com ou sem desconto
+ */
+$data['movde'] = ($data['desco'] > 0) ? $data['desco'] : $data['movde'];
+
+/**
  * Definindo o valor do campo fvist
  */
 $data['fvist'] = '';

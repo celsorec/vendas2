@@ -1,6 +1,17 @@
 <?php
 require_once './app/modules/get-select.php';
 
+//SENHA PARA DESCONTO
+$connect   = new DataRecord();
+$dataStore = $connect->read(['desco', 'senli'], 'empre');
+
+//Percentual de desconto e senha para aplicar desconto adicional encriptados em localStorage
+echo
+"<script>
+    localStorage.setItem('senli', '".base64_encode($dataStore[0]['senli'])."');
+    localStorage.setItem('desco', '".base64_encode(substr($dataStore[0]['desco'], 0, 2))."')
+</script>";
+
 //Métodos de pagamento
 $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
 ?>
@@ -94,7 +105,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                         <label for="movip">PERCENTUAL DE DESCONTO</label>
                         <div class="group-input movip">
                             <span></span>
-                            <input name="movip" id="movip" type="number" inputmode="decimal" step="1">
+                            <input name="movip" id="movip" type="number" inputmode="decimal" step="0.01">
                         </div>
                     </div>
 

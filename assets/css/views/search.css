@@ -80,6 +80,11 @@
     width: 100%;
     padding: 12px 0 10px 0;
     border-bottom: 1px solid var(--gray-lgt);
+    cursor: pointer;
+}
+
+#search .container .input-search .result-ajax li.empty-list {
+    cursor: text;
 }
 
 #search .container .input-search .result-ajax li span.alert {

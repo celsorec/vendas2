@@ -22,6 +22,7 @@ foreach($data['codpr'] as $key => $prod)
 //Strings que serão substituídas no arquivo comprovante.txt
 $search =
 [
+    '{__NOME_LOJA__}',
     '{__DATA__}',
     '{_HORA_}',
     '{FORMA_PAGAMENTO}',
@@ -40,10 +41,11 @@ $search =
 //Informações que substituirão strings acima
 $replace =
 [
+    str_pad(substr($_SESSION['nofem'], 0, 15), 15, ' ', STR_PAD_RIGHT),          //Nome da loja selecionada
     date('d/m/Y'),                                                               //Data da venda
     date('H:i:s'),                                                               //Hora da venda
     str_pad(substr($data['movnc'], 0, 17), 17, ' '),                             //Forma de pagamento
-    substr($data['codcl'], 0, 32),                                               //Cliente
+    substr($data['codcl'], 0, 31),                                               //Cliente
     str_pad(number_format($movde, 2), 13, ' '),                                  //Valor total da venda
     str_pad($data['movip'].'%', 12, ' ', STR_PAD_BOTH),                          //Percentual de desconto
     str_pad($data['desco'], 13, ' ', STR_PAD_LEFT),                              //Valor final com desconto

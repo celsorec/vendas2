@@ -28,7 +28,7 @@ function displayItems(responseData)
         //Cria lista de produtos encontrados via Ajax
         responseData.forEach((element) =>
         {
-            html += '<li>';
+            html += '<li class="list-items-ajax">';
             Object.entries(element).forEach(([key, value]) =>
             {
                 html += '<span class="'+key+'">'+value+'</span>';
@@ -38,7 +38,7 @@ function displayItems(responseData)
     }
     else //Se É a mensagem 'Insira pelo menos 8 dígitos'
     {
-        html += '<li><span class="alert">'+responseData.minLenghtAlert+'</span></li>';
+        html += '<li class="empty-list"><span class="alert">'+responseData.minLenghtAlert+'</span></li>';
     }
     resultAjax.innerHTML = html;
     toLocalStorage();
@@ -51,7 +51,7 @@ function displayItems(responseData)
 //Para gravar produtos em localStorage
 let productsList = {venda1: []};
 
-//Itens em localStorage
+//Evitando substituir itens já salvos em localStorage
 let storedProducts = localStorage.getItem('productsList');
 if(storedProducts) //Se há itens em localStorage adiciona-os a ${productsList}
 {
@@ -71,7 +71,7 @@ if(storedProducts) //Se há itens em localStorage adiciona-os a ${productsList}
 function toLocalStorage()
 {
     //Lista de produtos buscados via Ajax
-    let productsInfo = document.querySelectorAll('.result-ajax li');
+    let productsInfo = document.querySelectorAll('.result-ajax li.list-items-ajax');
     productsInfo.forEach((element) =>
     {
         //Revela lista ajax quando produtos são buscados

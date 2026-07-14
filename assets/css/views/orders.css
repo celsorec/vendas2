@@ -277,7 +277,7 @@
     left: 0;
     width: 100%;
     padding-top: 50px;
-    padding-bottom: 200px;
+    padding-bottom: 250px;
     padding-left: 16px;
     padding-right: 16px;
     background-color: #fff;
@@ -449,6 +449,11 @@
     width: 100%;
     padding: 12px 0 10px 0;
     border-bottom: 1px solid var(--gray-lgt);
+    cursor: pointer;
+}
+
+#orders .container form .checkout .result-ajax li.empty-list {
+    cursor: text;
 }
 
 #orders .container form .checkout .result-ajax li span.codcl {

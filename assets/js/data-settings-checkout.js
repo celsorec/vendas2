@@ -1,9 +1,13 @@
 /**
  * GERENCIANDO CHECKOUT
  */
-let selectPay  = document.querySelector('.select-pay');            //Botão para revelar checkout
-let checkout   = document.querySelector('.checkout');              //Checkout
-let btnBack    = document.querySelector('.checkout .header span'); //Botão para ocultar checkout
+let selectPay   = document.querySelector('.select-pay');            //Botão para revelar checkout
+let checkout    = document.querySelector('.checkout');              //Checkout
+let btnBack     = document.querySelector('.checkout .header span'); //Botão para ocultar checkout
+let movncSelect = document.querySelector('#movnc');                 //Métodos de pagamento
+let fnpreInput  = document.querySelector('.fnpre input');           //Quantidade de parcelas
+let fcalcInput  = document.querySelector('.fcalc input');           //Valor da parcela
+let movipInput  = document.querySelector('input#movip');            //Campo de percentual de desconto
 
 if(checkout)
 {
@@ -15,7 +19,7 @@ if(checkout)
     let classCheckout = localStorage.getItem('classCheckout');
     if(classCheckout === null) localStorage.setItem('classCheckout', 'checkout hidden');
 
-    //Adiciona classe que está salva em localStorage
+    //Adiciona classe que está salva em localStorage -> Mantém checkout aberto intencionalmente
     //checkout.setAttribute('class', localStorage.getItem('classCheckout'));
 
     //Oculta checkout, conforme classe
@@ -181,11 +185,21 @@ if(checkout)
         let passwordGroup = document.querySelector('.password-group');
         let descoAtob     = +(atob(localStorage.getItem('desco'))); //Desconto definido no GControl
 
-        if(movipValue > descoAtob) passwordGroup.classList.add('active');
-        else passwordGroup.classList.remove('active');
+        if((movipValue > descoAtob) || //Se desconto aplicado é maior que desconto cadastrado no GControl
+           //Se: Método de pagamento é Cartão Fidelidade && Parcelamento é maior que 2 && Há qualquer desconto
+           (movncSelect.value === 'Cartão Fidelidade' && fnpreInput.value > 2 && movipValue > 0))
+           {
+               passwordGroup.classList.add('active');
+           }
+           else passwordGroup.classList.remove('active');
     }
     window.activePassword = activePassword;
     activePassword(+checkoutItems.venda1['movip']); //Em caso de recarregamento da página, verifica desconto aplicado
+
+    //Chamando função 'activePassword' em campos relacionados
+    movncSelect.addEventListener('change', () => activePassword(movipInput.value)); //Meio de pagamento
+    fnpreInput.addEventListener ('input',  () => activePassword(movipInput.value)); //Valor da entrada
+    movipInput.addEventListener ('input',  () => activePassword(movipInput.value)); //Percentual de desconto
 
     /**
      * Alterando o tipo do campo de senha (password || text)
@@ -201,7 +215,6 @@ if(checkout)
     let btnOKPassword = document.querySelector('.btn-ok');          //Botão OK
     let btnCancelPass = document.querySelector('.btn-cancel');      //Botão Cancela
     let senliAtob     = atob(localStorage.getItem('senli'));        //
-    let movipInput    = document.querySelector('input#movip');      //Campo de percentual de desconto
 
     //Anula desconto e oculta container da senha de autorização ao clicar no botão cancelar
     btnCancelPass.addEventListener('click', () =>
@@ -267,9 +280,6 @@ if(checkout)
     /**
      * Calculando valor das parcelas e definindo quantidade de parcelas
      */
-    let fnpreInput = document.querySelector('.fnpre input'); //Quantidade de parcelas
-    let fcalcInput = document.querySelector('.fcalc input'); //Valor da parcela
-
     fnpreInput.addEventListener('input', () =>
     {
         //Se fnpreInput.value é vazio...
@@ -283,7 +293,6 @@ if(checkout)
     /**
      * Quando é obrigatório informar o cliente
      */
-    let movncSelect = document.querySelector('#movnc');
     let codclInput  = document.querySelector('#codcl');
 
     //2 formas de pagamento exigem registar o cliente: A prazo e Cartão Fidelidade

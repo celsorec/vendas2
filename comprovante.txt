@@ -1,4 +1,4 @@
-    IDEAL MAGAZINE     {__DATA__} - {_HORA_}
+    {__NOME_LOJA__}    {__DATA__} - {_HORA_}
     Pagamento: {FORMA_PAGAMENTO}
     Cliente: {CLIENTE}                      
     ----------------------------------------

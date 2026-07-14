@@ -27,7 +27,7 @@ if(searchInput)
             //Cria lista de clientes encontrados via Ajax
             responseData.forEach((element) =>
             {
-                html += '<li>';
+                html += '<li class="list-items-ajax">';
                 Object.entries(element).forEach(([key, value]) =>
                 {
                     html += '<span class="'+key+'">'+value+'</span>';
@@ -35,9 +35,9 @@ if(searchInput)
                 html += '</li>';
             });
         }
-        else //Se É a mensagem 'Insira pelo menos 8 dígitos'
+        else //Se É a mensagem 'Insira pelo menos 3 dígitos'
         {
-            html += '<li><span class="alert">'+responseData.minLenghtAlert+'</span></li>';
+            html += '<li class="empty-list"><span class="alert">'+responseData.minLenghtAlert+'</span></li>';
         }
         resultAjax.innerHTML = html;
         toInput();
@@ -49,7 +49,7 @@ if(searchInput)
     function toInput()
     {
         //Lista de clientes localizados via Ajax
-        let clientsInfo = document.querySelectorAll('.result-ajax li');
+        let clientsInfo = document.querySelectorAll('.result-ajax li.list-items-ajax');
         clientsInfo.forEach((element) =>
         {
             //Revela lista ajax quando clientes são localizados
