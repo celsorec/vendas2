@@ -310,7 +310,7 @@ if(checkout)
         }
     });
     
-    //Caso já esteja campo o campo preenchido
+    //Caso já esteja com o campo preenchido
     if(movncSelect.value == 'A prazo' || movncSelect.value == 'Cartão Fidelidade') codclInput.setAttribute('required', '');
     codclInput.addEventListener('invalid', () => codclInput.setCustomValidity('É preciso localizar e selecionar um cliente'));
     codclInput.addEventListener('input',   () => codclInput.setCustomValidity(''));

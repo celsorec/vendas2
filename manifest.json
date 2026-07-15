@@ -1,0 +1,22 @@
+{
+	"id": "/vendas2/",
+	"short_name": "Vendas 2.0",
+	"name": "Vendas 2 PWA ",
+	"icons": [
+		{
+			"src": "assets/images/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "assets/images/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "./index.php",
+	"background_color": "#FFFFFF",
+	"theme_color": "#007BFF",
+	"display": "standalone",
+	"orientation": "portrait"
+}

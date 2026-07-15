@@ -75,8 +75,6 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                             id="codcl"
                             type="search"
                             inputmode="numeric"
-                            minlength="10"
-                            maxlength="15"
                             placeholder="Localizar cliente pelo código"
                             data-file="search-ajax-client"
                             data-base="clien01"

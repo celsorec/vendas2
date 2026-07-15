@@ -8,6 +8,14 @@ $connect = new DataRecord();
 $pdo     = $connect->getConnection();
 $data    = filter_input_array(INPUT_POST, FILTER_SANITIZE_ADD_SLASHES);
 
+//Formulário enviado sem produto. Quem faria isso? [risos]
+if(!isset($data['codpr']) || !isset($data['movnc']))
+{
+    MessageHelper::setMessage('Ooops! Nenhum produto no seu carrinho de compras.', 'alert');
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    exit;
+}
+
 //Referências aos nomes das tabelas do banco de dados e numbl para montar código do Faturamento (numbl . data['vende'])
 $empre = $connect->read(['exerc', 'codem', 'numbl'], 'empre');
 $exerc = $empre[0]['exerc'].$empre[0]['codem'];
@@ -187,6 +195,5 @@ catch(Exception $e)
 //TESTAR COM O CELULAR
 //CRIAR PÁGINA SOBRE, INFORMANDO SOBRE AS MUDANÇAS E NOVIDADES
 //FAZER APP PWA
-//IMPEDIR VENDA VAZIA (NO BACKEND?)
 //SOLICITANDO SELEÇÃO DE CLIENTE MESMO DEPOIS DE CLIENTE JÁ SELECIONADO
 //OCULTAR .endcheckout BTN SE SENHA DE DESCONTO NÃO ESTIVER CORRETA E AO ACIONAR BOX DA SENHA
