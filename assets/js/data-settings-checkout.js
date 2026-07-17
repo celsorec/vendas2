@@ -44,7 +44,7 @@ if(checkout)
      * Transportando valor total da compra para Checkout
      */
     function setValueCheckout()
-    {        
+    {
         let descoValue = JSON.parse(localStorage.getItem('productsList')); //Buscando dados em localStorage
         if(!descoValue) return;                                            //Evitando erros no console
 

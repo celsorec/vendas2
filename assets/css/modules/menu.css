@@ -48,8 +48,8 @@
     font-weight: 400;
     background-color: var(--sec-color);
     color: #fff;
-    min-width: 20px;
     aspect-ratio: 1 / 1;
+    width: 20px;
 }
 
 /* Ícones */

@@ -50,6 +50,7 @@
 #config .container #select-store .stores {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 #config .container h3,
@@ -68,18 +69,22 @@
     background-position: center;
     border: 1px solid var(--gray-lgt);
     border-radius: 7px;
+    margin: 0;
 }
 
 #config .container #select-store .btn-store.ideal {
-    margin: 0;
     background-image: url('../../images/ideal_logo.svg');
     background-size: 76px auto;
 }
 
 #config .container #select-store .btn-store.maruzi {
-    margin: 0;
     background-image: url('../../images/maruzi_logo.svg');
     background-size: 66px auto;
+}
+
+#config .container #select-store .btn-store.sports {
+    background-image: url('../../images/sports_logo.svg');
+    background-size: 76px auto;
 }
 
 #config .container #select-store .stores input[type="radio"] {

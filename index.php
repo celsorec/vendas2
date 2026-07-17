@@ -43,16 +43,16 @@ else
 
 <!-- PWA -->
 <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      // Registra definindo o escopo exato para a sua subpasta
-      navigator.serviceWorker.register('./sw.js', { scope: './' })
-        .then((registration) => {
-          console.log('Service Worker registrado com escopo:', registration.scope);
-        })
-        .catch((error) => {
-          console.log('Falha ao registrar:', error);
-        });
-    });
-  }
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		// Registra definindo o escopo exato para a sua subpasta
+		navigator.serviceWorker.register('./sw.js', { scope: './' })
+		.then((registration) => {
+			console.log('Service Worker registrado com escopo:', registration.scope);
+		})
+		.catch((error) => {
+			console.log('Falha ao registrar:', error);
+		});
+	});
+}
 </script>

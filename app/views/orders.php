@@ -18,7 +18,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
 
 <div id="orders" class="view">
     <div class="container">        
-        <form action="process.php" method="POST">
+        <form action="process.php" method="POST" autocomplete="off">
             <div class="products">
                 <header>
                     <h2>PRODUTOS ADICIONADOS</h2>

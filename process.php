@@ -11,7 +11,7 @@ $data    = filter_input_array(INPUT_POST, FILTER_SANITIZE_ADD_SLASHES);
 //Formulário enviado sem produto. Quem faria isso? [risos]
 if(!isset($data['codpr']) || !isset($data['movnc']))
 {
-    MessageHelper::setMessage('Ooops! Nenhum produto no seu carrinho de compras.', 'alert');
+    MessageHelper::setMessage('Ooops! Não foi localizado nenhum produto no seu carrinho de compras.', 'alert');
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
 }
@@ -189,11 +189,5 @@ catch(Exception $e)
     MessageHelper::setMessage('ERRO: ' . $e->getMessage(), 'alert');
     header("Location: " . $_SERVER['HTTP_REFERER']);
 }
-
-//FALTA COMPARAR VENDA NO BANCO DE DADOS NO APP ATUAL E NO NOVO
-//ATUALIZA JSON ONLINE NA HOSTINGER COM INFORMAÇÕES DAS LOJAS PARA LOGIN
-//TESTAR COM O CELULAR
 //CRIAR PÁGINA SOBRE, INFORMANDO SOBRE AS MUDANÇAS E NOVIDADES
-//FAZER APP PWA
-//SOLICITANDO SELEÇÃO DE CLIENTE MESMO DEPOIS DE CLIENTE JÁ SELECIONADO
 //OCULTAR .endcheckout BTN SE SENHA DE DESCONTO NÃO ESTIVER CORRETA E AO ACIONAR BOX DA SENHA

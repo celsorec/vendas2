@@ -1,41 +1,26 @@
 <?php
 
-//Lista de lojas nas configurações iniciais
-if(!isset($_SESSION['storesdb']))
+//Obter nomes dos bancos de dados online
+function getStores()
 {
-    //Obter nomes dos bancos de dados online
-    function getStores()
-    {
-        $dbOnline = 'https://idealmagazineoficial.com.br/assets/storesdb.json';
+    $dbOnline = 'https://idealmagazineoficial.com.br/assets/storesdb.json';
 
-        //Substitui temporariamente o manipulador de erros do PHP
-        //Função vazia → ignora qualquer warning/notice
-        set_error_handler(function() {});
+    //Substitui temporariamente o manipulador de erros do PHP
+    //Função vazia → ignora qualquer warning/notice
+    set_error_handler(function() {});
 
-        $dbOnline = file_get_contents($dbOnline);
+    $dbOnline = file_get_contents($dbOnline);
 
-        //Restaura o comportamento normal de erros do PHP
-        restore_error_handler();
+    //Restaura o comportamento normal de erros do PHP
+    restore_error_handler();
 
-        if($dbOnline === false) return 'ERRO: Verifique sua conexão com a internet.';
-        return json_decode($dbOnline, true);
-    }
-
-    //Salva localmente para evitar necessidade de nova conexão com a internet
-    $_SESSION['storesdb'] = getStores();
+    if($dbOnline === false) return 'ERRO: Verifique sua conexão com a internet.';
+    return json_decode($dbOnline, true);
 }
-
-//Só prossegue se obteve os dados online: array
-if(!is_array($_SESSION['storesdb']))
-{   
-    echo $_SESSION['storesdb'];   //Exibe mensagem de erro
-    unset($_SESSION['storesdb']); //Deleta mensagem de erro para tentar nova conexão online para obter nomes dos bancos de dados
-    exit;    
-}
-
-//Nomes dos bancos de dados das lojas
-$storesdb = $_SESSION['storesdb'];
+$storesdb = getStores();
+foreach($storesdb as $key => $value) asort($storesdb[$key]); //Lojas em ordem alfabética
 ?>
+
 <div id="config">
     <form method="POST" action="auth.php">
         <main class="container">
@@ -51,6 +36,9 @@ $storesdb = $_SESSION['storesdb'];
 
                     <input type="radio" id="maruzi" name="store" value="Maruzi" required>
                     <label for="maruzi" class="btn-store maruzi"></label>
+
+                    <input type="radio" id="sports" name="store" value="Ideal Sports" required>
+                    <label for="sports" class="btn-store sports"></label>
                 </div>
             </section>
 
@@ -83,7 +71,7 @@ $storesdb = $_SESSION['storesdb'];
 
 <script>
 //Armazenando lojas em localStorage
-const storesdb = <?php echo json_encode($_SESSION['storesdb']); ?>;
+const storesdb = <?php echo json_encode($storesdb); ?>;
 localStorage.setItem('storesdb', JSON.stringify(storesdb));
 
 //Elementos para usar e manipular

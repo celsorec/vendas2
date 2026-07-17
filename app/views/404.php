@@ -9,4 +9,5 @@ http_response_code(404);
         <p>O recurso que você tentou acessar não existe ou foi removido.</p>
         <a class=" btn load" href="index.php?view=home">Voltar à página inicial</a>
     </div>
+    <nav class="mainmenu"><?=$menu;?></nav>
 </div>

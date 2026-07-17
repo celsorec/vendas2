@@ -44,7 +44,12 @@ $menu =
             ],
             [
                 'label' => 'Ajuda',
-                'url'   => '#',
+                'url'   => '?view=help',
+                'class' => 'disabled hidden'
+            ],
+            [
+                'label' => 'Sobre',
+                'url'   => '?view=about',
                 'class' => 'disabled hidden'
             ]
         ]

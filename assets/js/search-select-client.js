@@ -70,18 +70,8 @@ if(searchInput)
     
                 //Adicionando valor ao input cliente imediatamente
                 searchInput.value = selectClient;
-    
-                //Dados do checkout em localStorage (semelhante a data-settings-checkout.js)
-                let valuesInput = JSON.parse(localStorage.getItem('checkoutItems')); 
-    
-                //Verifica se há valores em localStorage ao iniciar o objeto
-                let checkoutItems = {venda1: {}};
-                if(valuesInput !== null) checkoutItems = {venda1: valuesInput.venda1};
-    
-                //Salvar código e nome do cliente em localStorage (checkoutItems.codcl)
-                checkoutItems.venda1[searchInput.name] = selectClient;
-                localStorage.setItem('checkoutItems', JSON.stringify(checkoutItems));
-    
+                searchInput.dispatchEvent(new Event('input', {bubbles: true}));
+        
                 //Ocultar lista ajax quando cliente é selecionado
                 element.parentElement.classList.add('hidden');
             });

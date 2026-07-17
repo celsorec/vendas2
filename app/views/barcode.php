@@ -1,6 +1,6 @@
 <div id="barcode" class="view">
     <div class="container">
-        <a href="index.php?view=search" id="manual" class="btn load">INSERIR MANUALMENTE</a>
+        <a href="index.php?view=search-products" id="manual" class="btn load">INSERIR MANUALMENTE</a>
 
         <video id="video" autoplay playsinline></video>
 
