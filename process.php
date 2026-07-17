@@ -189,5 +189,3 @@ catch(Exception $e)
     MessageHelper::setMessage('ERRO: ' . $e->getMessage(), 'alert');
     header("Location: " . $_SERVER['HTTP_REFERER']);
 }
-//CRIAR PÁGINA SOBRE, INFORMANDO SOBRE AS MUDANÇAS E NOVIDADES
-//OCULTAR .endcheckout BTN SE SENHA DE DESCONTO NÃO ESTIVER CORRETA E AO ACIONAR BOX DA SENHA

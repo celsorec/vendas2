@@ -1,0 +1,28 @@
+# Arquivos temporários específicos do seu projeto
+.tmp.*/
+
+# Dependências (caso utilize gerenciadores de pacotes no futuro)
+/vendor/
+/node_modules/
+
+# Arquivos de configuração sensíveis e variáveis de ambiente
+.env
+.env.local
+.env.*.local
+*.log
+
+# Arquivos gerados pelo Sistema Operacional (Windows / macOS)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Configurações de editores de código (VS Code / PHPStorm)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
