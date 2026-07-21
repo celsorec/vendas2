@@ -14,10 +14,10 @@
         <p><strong>Informe seu Código:</strong> Digite o seu número de identificação de vendedor exclusivo no campo indicado.</p>
         <p><strong>Entrar:</strong> Clique no botão <strong>"Prosseguir"</strong> para acessar a tela inicial de vendas.</p>
 
-        <div class="captura-tela-placeholder" style="border: 2px dashed #808080; padding: 20px; text-align: center; margin: 15px 0; background-color: #f9f9f9;">
-            <p><strong>[Captura de Tela: Tela de Configuração Inicial]</strong></p>
-            <small style="color: #666; font-style: italic;">Tire um print da tela de login exibindo a seleção de marcas, o menu de localização e o campo para inserir o código do vendedor.</small>
-        </div>
+        <figure>
+            <img src="app/media/images/config.png" alt="Tela de configuração inicial">
+            <figcaption>Tela de configuração inicial</figcaption>
+        </figure>
         <hr>
 
         <!-- ETAPA 2 -->
@@ -26,10 +26,10 @@
         <p>No topo da tela você verá uma mensagem de boas-vindas com o seu nome.</p>
         <p>Para iniciar o registro de uma nova venda, basta clicar no botão azul central escrito <strong>"Adicionar Produto"</strong>.</p>
 
-        <div class="captura-tela-placeholder" style="border: 2px dashed #808080; padding: 20px; text-align: center; margin: 15px 0; background-color: #f9f9f9;">
-            <p><strong>[Captura de Tela: Tela Inicial do Vendedor]</strong></p>
-            <small style="color: #666; font-style: italic;">Tire um print da tela com o botão "Adicionar Produto" em destaque.</small>
-        </div>
+        <figure>
+            <img src="app/media/images/home.png" alt="Tela inicial">
+            <figcaption>Tela inicial</figcaption>
+        </figure>
         <hr>
 
         <!-- ETAPA 3 -->
@@ -41,19 +41,20 @@
         <p>Aproxime e centralize o código de barras da etiqueta do produto dentro da área indicada na tela.</p>
         <p>Assim que o código for reconhecido, o item será incluído diretamente na sua lista de compras e você será levado para o carrinho.</p>
 
-        <div class="captura-tela-placeholder" style="border: 2px dashed #808080; padding: 20px; text-align: center; margin: 15px 0; background-color: #f9f9f9;">
-            <p><strong>[Captura de Tela: Leitor de Código de Barras Ativo]</strong></p>
-            <small style="color: #666; font-style: italic;">Tire um print mostrando a tela da câmera com o quadrado central focado e a mensagem de instrução de aproximação.</small>
-        </div>
+        <figure>
+            <img src="app/media/images/barcode.png" alt="Leitura do código de barras">
+            <figcaption>Leitura do código de barras</figcaption>
+        </figure>
+        <br>
 
         <p><strong>Opção B: Digitação Manual</strong></p>
         <p>Caso a câmera apresente dificuldades de leitura ou você prefira digitar, clique em <strong>"INSERIR MANUALMENTE"</strong> na tela de leitura.</p>
         <p>Insira o código numérico de barras do produto e clique no resultado exibido logo abaixo para adicioná-lo.</p>
 
-        <div class="captura-tela-placeholder" style="border: 2px dashed #808080; padding: 20px; text-align: center; margin: 15px 0; background-color: #f9f9f9;">
-            <p><strong>[Captura de Tela: Busca Manual de Produtos]</strong></p>
-            <small style="color: #666; font-style: italic;">Tire um print da barra de busca de produtos exibindo o resultado encontrado listado abaixo dela.</small>
-        </div>
+        <figure>
+            <img src="app/media/images/search.png" alt="Buscando produtos manualmente">
+            <figcaption>Buscando produtos manualmente</figcaption>
+        </figure>
         <hr>
 
         <!-- ETAPA 4 -->
@@ -66,17 +67,17 @@
         <p><strong>Acompanhar o Valor Total:</strong> No rodapé da tela, o painel de cor cinza exibe de maneira contínua o valor total somado da compra.</p>
         <p><strong>Mais Itens:</strong> Para voltar e adicionar mais produtos, toque no botão azul de adição rápida (com o símbolo <code>+</code>) localizado no rodapé direito.</p>
 
-        <div class="captura-tela-placeholder" style="border: 2px dashed #808080; padding: 20px; text-align: center; margin: 15px 0; background-color: #f9f9f9;">
-            <p><strong>[Captura de Tela: Carrinho de Compras]</strong></p>
-            <small style="color: #666; font-style: italic;">Tire um print da tela que exibe os produtos adicionados, os botões de ajuste de quantidade e o total somado no rodapé.</small>
-        </div>
+        <figure>
+            <img src="app/media/images/cart.png" alt="Carrinho de compras">
+            <figcaption>Carrinho de compras</figcaption>
+        </figure>
         <hr>
-
+        
         <!-- ETAPA 5 -->
         <h3>Etapa 5: Finalizando a Venda (Checkout)</h3>
         <p>Com o carrinho preenchido, toque no botão verde com ícone de <strong>Cédula de Dinheiro</strong> no canto inferior direito para abrir as opções de pagamento:</p>
 
-        <p><strong>Origem da Venda:</strong> Informe se o pedido está sendo feito em modalidade <em>On-line</em> ou <em>Presencial</em>.</p>
+        <!--<p><strong>Origem da Venda:</strong> Informe se o pedido está sendo feito em modalidade <em>On-line</em> ou <em>Presencial</em>.</p>-->
         <p><strong>Localizar Cliente:</strong> No campo "Cliente", digite o código do cliente cadastrado. Clique no nome dele assim que aparecer nos resultados de busca para vinculá-lo à venda. Se o pagamento for nas modalidades <strong>"A prazo"</strong> ou <strong>"Cartão Fidelidade"</strong>, a seleção do cliente é obrigatória.</p>
         <p><strong>Forma de Pagamento:</strong> Escolha a opção desejada na listagem de métodos de pagamento disponíveis.</p>
 
@@ -89,15 +90,10 @@
         <p>Insira a quantidade de prestações desejada em "Quantidade de Parcelas" para obter o valor exato calculado de cada parcela mensal.</p>
         <p><strong>Conclusão da Venda:</strong> Para finalizar, revise as informações e clique no botão verde <strong>"Concluir Venda"</strong> no rodapé.</p>
 
-        <div class="captura-tela-placeholder" style="border: 2px dashed #808080; padding: 20px; text-align: center; margin: 15px 0; background-color: #f9f9f9;">
-            <p><strong>[Captura de Tela: Formulário de Finalização da Venda]</strong></p>
-            <small style="color: #666; font-style: italic;">Tire um print detalhando todos os campos de pagamento preenchidos na tela de checkout.</small>
-        </div>
-
-        <div class="captura-tela-placeholder" style="border: 2px dashed #808080; padding: 20px; text-align: center; margin: 15px 0; background-color: #f9f9f9;">
-            <p><strong>[Captura de Tela: Painel de Senha de Autorização]</strong></p>
-            <small style="color: #666; font-style: italic;">Tire um print com a janela de digitação de senha ativa acima das informações de pagamento.</small>
-        </div>
+        <figure>
+            <img src="app/media/images/checkout.png" alt="Checkout">
+            <figcaption>Checkout</figcaption>
+        </figure>
         <hr>
 
         <!-- ETAPA 6 -->

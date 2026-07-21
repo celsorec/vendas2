@@ -30,7 +30,7 @@ if($q !== '')
         $produ01->execute();
         $produ01 = $produ01->fetchAll(PDO::FETCH_ASSOC);
 
-        $statement = $pdo->prepare("SELECT DISTINCT gragr FROM grd{$exercicio} WHERE progr='".substr($q, 0, -(strlen($q) - 8))."' AND gragr='".substr($q, 8)."' AND SQL_DELETED='F'");
+        $statement = $pdo->prepare("SELECT DISTINCT gragr FROM grd{$exercicio} WHERE progr='".substr($q, 0, -(strlen($q) - 8))."' AND gragr='".trim(substr($q, 8))."' AND SQL_DELETED='F'");
         $statement->execute();
         $gragr = $statement->fetchAll(PDO::FETCH_ASSOC);
 

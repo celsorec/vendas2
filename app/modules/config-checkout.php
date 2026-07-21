@@ -59,6 +59,11 @@ else $data['movvp'] = 'v';
 $data['movde'] = ($data['desco'] > 0) ? $data['desco'] : $data['movde'];
 
 /**
+ * Origem da venda
+ */
+$data['mopas'] = isset($data['mopas']) ? $data['mopas'] : 'a';
+
+/**
  * Definindo o valor do campo fvist
  */
 $data['fvist'] = '';

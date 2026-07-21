@@ -54,6 +54,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                     <div class="value-total"></div>
                 </div>
 
+                <!--
                 <div class="field-group">
                     <label for="mopas">ORIGEM DA VENDA</label>
                     <div class="group-input mopas">
@@ -62,6 +63,18 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                             <option value="" disabled="" selected="">Selecione</option>
                             <option value="o">On-line</option>
                             <option value="a">Presencial</option>
+                        </select>
+                    </div>
+                </div>
+                -->
+
+                <div class="field-group">
+                    <label for="movnc">FORMA DE PAGAMENTO</label>
+                    <div class="group-input movnc">
+                        <span></span>
+                        <select name="movnc" id="movnc" required="">
+                            <option value="" disabled="" selected="">Selecione</option>
+                            <?php foreach($movncOptions as $key => $value) print '<option value="'.$key.'">'.$value.'</option>'; ?>
                         </select>
                     </div>
                 </div>
@@ -85,17 +98,6 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
                     <ul class="result-ajax">
                         <!--INSERIR LISTA HTML AQUI (Ajax)-->
                     </ul>
-                </div>
-
-                <div class="field-group">
-                    <label for="movnc">FORMA DE PAGAMENTO</label>
-                    <div class="group-input movnc">
-                        <span></span>
-                        <select name="movnc" id="movnc" required="">
-                            <option value="" disabled="" selected="">Selecione</option>
-                            <?php foreach($movncOptions as $key => $value) print '<option value="'.$key.'">'.$value.'</option>'; ?>
-                        </select>
-                    </div>
                 </div>
 
                 <div class="supergroup">
@@ -165,7 +167,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
             <h2>SENHA DE AUTORIZAÇÃO</h2>
             <div class="field-group">
                 <span class="lock-icon"></span>
-                <input id="password" maxlength="20" type="password">
+                <input id="password" maxlength="20" type="password" autocomplete="off">
                 <span class="eye-icon"></span>
             </div>
 

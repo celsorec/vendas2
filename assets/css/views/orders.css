@@ -67,7 +67,6 @@
 
 #orders .container form .products .product .top-group .codpr {
     display: flex;
-    flex-basis: 30%;
 }
 
 /* inputs gerais */
@@ -80,17 +79,17 @@
 
 /* input código do produto */
 #orders .container form input[name='codpr[]'] {
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: 400;
-    width: 60px;
+    width: 75px;
     background-color: transparent;
 }
 
 /* input grade */
 #orders .container form input[name='gragr[]'] {
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: 400;
-    width: 15px;
+    width: 20px;
     text-align: right;
     background-color: transparent;
 }
