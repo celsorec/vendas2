@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * ADICIONA PRODUTOS A PARTIR DA LEITURA DO CÓDIGO DE BARRAS
+ */
 header('Content-Type: application/json');
 require_once '../../Core/Message/MessageHelper.php';
 
@@ -49,7 +52,7 @@ if($q !== '')
             else unset($item['promo']);
 
             $item['movqt'] = (float) 1; //movqt não consta no cadastro de produtos; é informação para movYYYY
-            $item['subtt'] = (float) ($item['promo'] ?? $item['venpr']); //subtt não consta no cadastro de produtos; é informação cálculo de subtotal
+            $item['subtt'] = (float) ($item['promo'] ?? $item['venpr']); //subtt não consta no cadastro de produtos; é informação p/ cálculo de subtotal
 
             //Definindo estoque e grade
             $item['gragr'] = $value['gragr'];

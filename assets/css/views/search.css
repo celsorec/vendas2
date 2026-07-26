@@ -151,3 +151,10 @@
     display: inline-block;
     padding-right: 7px;
 }
+
+#search .container .input-search .result-ajax li span.locpr::before {
+    content: 'LOC';
+    font-size: 10px;
+    display: inline-block;
+    padding-right: 5px;
+}

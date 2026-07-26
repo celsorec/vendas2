@@ -31,7 +31,7 @@ function displayItems(responseData)
             html += '<li class="list-items-ajax">';
             Object.entries(element).forEach(([key, value]) =>
             {
-                html += '<span class="'+key+'">'+value+'</span>';
+                if(value !== '') html += '<span class="'+key+'">'+value+'</span>';
             });
             html += '</li>';
         });

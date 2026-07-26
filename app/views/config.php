@@ -55,7 +55,7 @@ foreach($storesdb as $key => $value) asort($storesdb[$key]); //Lojas em ordem al
             </section>
 
             <section id="select-user">
-                <label for="usercode" class="subtitle">INFORME SEU CÓDIGO DE ACESSO</label>
+                <label for="usercode" class="subtitle">INFORME SEU CÓDIGO</label>
                 <div class="group-input usercode">
                     <span></span>
                     <input type="number" inputmode="numeric" id="usercode" name="usercode" value="" required>

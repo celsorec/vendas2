@@ -37,7 +37,8 @@ if(isset($_GET['view']) && !empty($_GET['view']))
 }
 else
 {
-    require_once 'app/views/config.php';
+    $page = require_once 'app/views/home.php';
+    //require_once 'app/views/config.php';
 }
 ?>
 

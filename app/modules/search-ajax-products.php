@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * LOCALIZA PRODUTOS A PARTIR DA DIGITAÇÃO MANUAL DO CÓDIGO DE BARRAS
+ */
 session_start();
 header('Content-Type: application/json');
 
@@ -106,7 +109,7 @@ if($q !== '')
         }
 
         //Buscando informações principais do produto
-        $columns = 'codpr, nompr, promo, venpr, prcpr';
+        $columns = 'codpr, nompr, promo, venpr, prcpr, locpr';
         $produ01 = $pdo->prepare("SELECT $columns FROM $table WHERE codpr LIKE '".$q."%' AND SQL_DELETED='F'");
         $produ01->execute();
         $produ01 = $produ01->fetchAll(PDO::FETCH_ASSOC);
@@ -131,6 +134,9 @@ if($q !== '')
             //Definindo estoque e grade
             $item['gragr'] = $key;
             $item['quagr'] = (int) $value;
+
+            //Repetindo informações dos produtos -> Localização
+            $item['locpr'] = $produ01[0]['locpr'];
 
             //Informação completa do produto
             $prodFinal[] = $item;
