@@ -4,7 +4,6 @@ require_once 'core/Database/DataRecord.php';
 require_once 'core/Auth/AuthHelper.php';
 
 $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_ADD_SLASHES);
-if($data) $_SESSION['dbname'] = $data['location']; //Nome do banco de dados
 $auth = new AuthHelper();
 
 //Logout
@@ -25,7 +24,12 @@ else
         $connect   = new DataRecord();
         $dataStore = $connect->read(['nofem'], 'empre');
 
-        $_SESSION['logos'] = strtolower(str_replace(' ', '', $data['store'])); //Para pegar um ou outro logotipo
+        //Logotipo
+        $logo = explode(':', $_SERVER['HTTP_HOST'])[0];
+        $logo = explode('.', $logo)[0];
+        $logo = explode('_', $logo)[0];
+
+        $_SESSION['logos'] = strtolower(str_replace(' ', '', $logo)); //Para pegar um ou outro logotipo
         $_SESSION['nofem'] = $dataStore[0]['nofem']; //Nome fantasia da loja
         $_SESSION['nomve'] = trim(substr($info[0]['nomve'], 0, -1)); //Remove espaços em branco e letra N
         $_SESSION['codve'] = $info[0]['codve'];

@@ -43,6 +43,11 @@ $menu =
                 'class' => 'load'
             ],
             [
+                'label' => 'Compartilhar App',
+                'url'   => '?view=share-app',
+                'class' => 'disabled hidden'
+            ],
+            [
                 'label' => 'Ajuda',
                 'url'   => '?view=help',
                 'class' => 'disabled hidden'

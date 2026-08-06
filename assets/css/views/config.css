@@ -41,6 +41,30 @@
     font-weight: normal;
 }
 
+/* Logo gControl */
+#config .container #gcontrol-logo {
+    max-width: 200px;
+    min-width: 150px;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo bag */
+#config .container #bag-logo {
+    max-width: 200px;
+    min-width: 150px;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Selecionar loja */
 #config .container #select-store {
     display: flex;
@@ -130,14 +154,16 @@
 }
 
 /* Selecionar usuário */
-#config .container #select-user .group-input.usercode {
+#config .container #select-user .group-input.usercode,
+#config .container #select-password .group-input.password {
     position: relative;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
 }
 
-#config .container #select-user .group-input.usercode span {
+#config .container #select-user .group-input.usercode span,
+#config .container #select-password .group-input.password span {
     padding: 5px;
     width: 35px;
     height: 100%;
@@ -146,14 +172,33 @@
     top: 0;
     left: 0;
     pointer-events: none;
-    background-image: url('../../images/user-icon.svg');  
     background-repeat: no-repeat;
     background-position: center;
 }
 
-#config .container #select-user .group-input.usercode input {
+#config .container #select-user .group-input.usercode span {background-image: url('../../images/user-icon.svg');}
+#config .container #select-password .group-input.password span {background-image: url('../../images/lock-password-icon.svg');}
+
+#config .container #select-user .group-input.usercode input,
+#config .container #select-password .group-input.password input {
     border: 0;
     border-radius: 0;
     width: 100%;
     padding-left: 45px;
+}
+
+#config .container #select-password .group-input.password input {
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    padding-left: 45px;
+}
+
+#config .container footer {
+    display: flex;
+    justify-content: center;
+}
+
+#config .container footer button {
+    width: 100%;
 }

@@ -1,103 +1,61 @@
 <?php
+//Obtendo localização da loja através do domínio
+$location = explode(':', $_SERVER['HTTP_HOST'])[0];
+$location = explode('.', $location);
 
-//Obter nomes dos bancos de dados online
-function getStores()
-{
-    $dbOnline = 'https://idealmagazineoficial.com.br/assets/storesdb.json';
+//Verificando se há subdomínio
+if(count($location) > 2) $location = htmlspecialchars($location[0], ENT_QUOTES, 'UTF-8');
 
-    //Substitui temporariamente o manipulador de erros do PHP
-    //Função vazia → ignora qualquer warning/notice
-    set_error_handler(function() {});
+//Definindo banco de dados e logotipo; combinando URL e ARRAY
+$locationdb =
+[
+    //Ideal
+    "ideal_buriticupu"      => "bd_ideal_buriti",
+    "ideal_repartimento"    => "bd_ideal_rp",
+    "ideal_caxias"          => "bd_ideal_ca",
+    "ideal_grajau"          => "bd_ideal_gr",
+    "ideal_santaluzia"      => "bd_ideal_sl",
+    "ideal_bacabal"         => "bd_ideal_ba",
+    "ideal_santarem"        => "bd_ideal_santarem",
+    "ideal_presidentedutra" => "bd_ideal_pd",
+    "ideal_altamira"        => "bd_ideal_al",
+    
+    
+    "ideal_acailandia"   => "bd_ideal_ac",
+    "ideal_imperatriz"   => "bd_ideal_im",
+    "ideal_balsas"       => "bd_ideal_bs",
 
-    $dbOnline = file_get_contents($dbOnline);
+    //Maruzi
+    "maruzi_grajau"    => "bd_maruzi_gr",
+    "maruzi_altamira"  => "bd_ideal_parceira"
 
-    //Restaura o comportamento normal de erros do PHP
-    restore_error_handler();
+    //Sports
+];
 
-    if($dbOnline === false) return 'ERRO: Verifique sua conexão com a internet.';
-    return json_decode($dbOnline, true);
-}
-$storesdb = getStores();
-foreach($storesdb as $key => $value) asort($storesdb[$key]); //Lojas em ordem alfabética
+if(isset($locationdb[$location])) $_SESSION['dbname'] = $locationdb[$location];
+//A fazer: corrigir esse HTML manual com echo
+else echo '<div class="alert message" style="left: 0px; opacity: 1; visibility: visible;"><span class="icon-alert">Erro: Verifique o link de acesso.</span><button class="close">x</button></div>';
+//$_SESSION['dbname'] = 'bd_ideal_buriti';
 ?>
 
 <div id="config">
     <form method="POST" action="auth.php">
         <main class="container">
-            <header>
-                <h1><span class="icon"></span><span class="text">CONFIGURAÇÃO INICIAL</span></h1>
-            </header>
-
-            <section id="select-store">
-                <h3>SELECIONAR LOJA</h3>
-                <div class="stores">
-                    <input type="radio" id="ideal" name="store" value="Ideal Magazine" required>
-                    <label for="ideal" class="btn-store ideal"></label>
-
-                    <input type="radio" id="maruzi" name="store" value="Maruzi" required>
-                    <label for="maruzi" class="btn-store maruzi"></label>
-
-                    <input type="radio" id="sports" name="store" value="Ideal Sports" required>
-                    <label for="sports" class="btn-store sports"></label>
-                </div>
-            </section>
-
-            <section id="select-city">
-                <label for="location" class="subtitle">SELECIONAR LOCALIZAÇÃO</label>
-
-                <div class="group-input location">
-                    <span></span>
-                    <select id="location" name="location" required>
-                        <option value="" disabled selected>Selecione uma das lojas acima</option>
-                        <!--INSERIR HTML OPTIONS AQUI-->
-                    </select>
-                </div>
+            <section id="bag-logo">
+                <img src="app/media/images/bag-logo.svg" alt="App de Vendas">
             </section>
 
             <section id="select-user">
-                <label for="usercode" class="subtitle">INFORME SEU CÓDIGO</label>
+                <label for="usercode" class="subtitle">DIGITE SEU CÓDIGO</label>
                 <div class="group-input usercode">
                     <span></span>
                     <input type="number" inputmode="numeric" id="usercode" name="usercode" value="" required>
                 </div>
             </section>
-
+            
             <footer>
                 <button class="btn" type="submit"><span class="icon"></span><span class="text">Prosseguir</span></button>
             </footer>
         </main>
     </form>
 </div>
-
-<script>
-//Armazenando lojas em localStorage
-const storesdb = <?php echo json_encode($storesdb); ?>;
-localStorage.setItem('storesdb', JSON.stringify(storesdb));
-
-//Elementos para usar e manipular
-const radios = document.querySelectorAll('input[name="store"]');
-const select = document.getElementById('location');
-
-//Quando clique em logotipo de uma das lojas...
-radios.forEach(radio =>
-{
-    radio.addEventListener('change', function()
-    {
-        const store = this.value;
-        select.innerHTML = '<option value="" disabled selected>Selecione</option>';
-
-        if(storesdb[store])
-        {
-            //Altera a lista de lojas e seus bancos de dados
-            Object.entries(storesdb[store]).forEach(([key, value]) =>
-            {
-                const option = document.createElement('option');
-                option.value = key;
-                option.textContent = value;
-
-                select.appendChild(option);
-            });
-        }
-    });
-});
-</script>

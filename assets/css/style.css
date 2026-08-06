@@ -20,7 +20,8 @@
 @import url('views/about.css');
 @import url('views/help.css');
 @import url('views/404.css');
-
+@import url('views/403.css');
+@import url('views/share-app.css');
 
 :root {
     --pri-color: #142d85ff;

@@ -1,7 +1,7 @@
 {
-	"id": "/vendas2/",
-	"short_name": "Vendas 2.0",
-	"name": "Vendas 2 PWA ",
+	"id": "/vendas/",
+	"short_name": "Vendas",
+	"name": "GControl Vendas",
 	"icons": [
 		{
 			"src": "assets/images/icon-192.png",

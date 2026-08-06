@@ -1,7 +1,7 @@
-/* 404 */
+/* 403 */
 
-#_404 .container {
-    height: 100dvh;
+#_403 .container {
+    height: calc(100dvh - 50px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,14 +9,14 @@
     padding: 30px 24px;
 }
 
-#_404 .container header {
+#_403 .container header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#_404 .container h1,
-#_404 .container h2,
-#_404 .container p {
+#_403 .container h1,
+#_403 .container h2,
+#_403 .container p {
     text-align: center;
 }
