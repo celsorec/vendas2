@@ -19,17 +19,37 @@ $locationdb =
     "ideal_santarem"        => "bd_ideal_santarem",
     "ideal_presidentedutra" => "bd_ideal_pd",
     "ideal_altamira"        => "bd_ideal_al",
+    "ideal_santaines"       => "bd_ideal_si",
+    "ideal_codo"            => "bd_ideal_co",
+    "ideal_acailandia"      => "bd_ideal_ac",
+    "ideal_imperatriz"      => "bd_ideal_im",
+    "ideal_caxiasshopping"  => "bd_ideal_sh",
+    "ideal_domeliseu"       => "bd_ideal_de",
+    "ideal_saomiguelpassa"  => "bd_ideal_sm", //Falta IPv6
+    "ideal_itaituba"        => "bd_ideal_it",
+    "ideal_jacunda"         => "bd_ideal_ja",
+    "ideal_lagodapedra"     => "bd_ideal_lp",
+    "ideal_pedreiras"       => "bd_ideal_pe",
+    "ideal_uruara"          => "bd_ideal_ur",
+    "ideal_igarapemirim"    => "bd_ideal_igarapemi",
+    "ideal_breubranco"      => "bd_ideal_breu",
+    "ideal_moju"            => "bd_ideal_mo",
+    "ideal_balsas"          => "bd_ideal_bs",
+    "ideal_vianopolis"      => "bd_ideal_goiania",
+    "ideal_goianesia"       => "bd_ideal_go", //10030598
     
-    
-    "ideal_acailandia"   => "bd_ideal_ac",
-    "ideal_imperatriz"   => "bd_ideal_im",
-    "ideal_balsas"       => "bd_ideal_bs",
-
     //Maruzi
-    "maruzi_grajau"    => "bd_maruzi_gr",
-    "maruzi_altamira"  => "bd_ideal_parceira"
+    "maruzi_grajau"          => "bd_maruzi_gr",
+    "maruzi_altamira"        => "bd_ideal_parceira",
+    "maruzi_presidentedutra" => "bd_ideal_mcs",
+    "maruzi_itaituba"        => "bd_ideal_maruzi_it",
 
     //Sports
+    "sports_tailandia"       => "bd_idealsportsta",
+    "sports_jacunda"         => "bd_idealsportja",
+
+    //Florenzza
+    "florenzza_jacunda"       => "bd_ideal_fl",
 ];
 
 if(isset($locationdb[$location])) $_SESSION['dbname'] = $locationdb[$location];
@@ -46,7 +66,7 @@ else echo '<div class="alert message" style="left: 0px; opacity: 1; visibility: 
             </section>
 
             <section id="select-user">
-                <label for="usercode" class="subtitle">DIGITE SEU CÓDIGO</label>
+                <label for="usercode" class="subtitle">CÓDIGO DO VENDEDOR</label>
                 <div class="group-input usercode">
                     <span></span>
                     <input type="number" inputmode="numeric" id="usercode" name="usercode" value="" required>

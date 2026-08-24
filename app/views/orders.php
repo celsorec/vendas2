@@ -167,7 +167,7 @@ $movncOptions = getSelect(['forpg', 'forpg'], 'forpg', "WHERE SQL_DELETED='F'");
             <h2>SENHA DE AUTORIZAÇÃO</h2>
             <div class="field-group">
                 <span class="lock-icon"></span>
-                <input id="password" maxlength="20" type="password" autocomplete="off">
+                <input id="password" maxlength="20" type="password" autocomplete="new-password">
                 <span class="eye-icon"></span>
             </div>
 

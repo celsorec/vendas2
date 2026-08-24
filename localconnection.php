@@ -36,7 +36,7 @@ function getServerIpCache($url, $fileName)
 
 if(filter_var($clientIp, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6))
 {   //Verificação para conexões IPv6
-    $serverIpV6 = getServerIpCache('https://api6.ipify.org', 'server_ip_v6.txt');
+    $serverIpV6 = getServerIpCache('http://api6.ipify.org', 'server_ip_v6.txt');
 
     if(!empty($serverIpV6))
     {
@@ -47,6 +47,6 @@ if(filter_var($clientIp, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6))
 }
 else //Verificação para conexões IPv4
 {
-    $serverIpV4 = getServerIpCache('https://api4.ipify.org', 'server_ip_v4.txt');
+    $serverIpV4 = getServerIpCache('http://api4.ipify.org', 'server_ip_v4.txt');
     if($clientIp === $serverIpV4) $accessAllowed = true;
 }
