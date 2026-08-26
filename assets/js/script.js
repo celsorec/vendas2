@@ -11,6 +11,7 @@ import ('./update-cart.js');
 import ('./count-items-cart.js');
 import ('./data-settings-checkout.js');
 import ('./share-app.js');
+import ('./update-notify.js');
 
 /*
 document.addEventListener('contextmenu', function(e)

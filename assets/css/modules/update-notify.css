@@ -1,0 +1,28 @@
+/* LOAD */
+
+#update-notify {
+    z-index: 98;
+    background-color: #4d4d4d77;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100dvh;
+    top: 100dvh;
+}
+
+#update-notify.active {
+    top: 0;
+}
+
+#update-notify .modal {
+    width: 90%;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

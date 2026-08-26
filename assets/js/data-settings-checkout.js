@@ -285,6 +285,7 @@ if(checkout)
         //Se fnpreInput.value é vazio...
         if(ftotaInput.value == '') ftotaInput.value = document.querySelector('.checkout .desco input').value; //Valor com desconto
         if(ftotaInput.value == '') ftotaInput.value = document.querySelector('.movde input').value;           //Valor sem desconto
+        ftotaInput.dispatchEvent(new Event('change')); //Loja Pedreiras. 24-08-2026
 
         fcalcInput.value = (+ftotaInput.value / +fnpreInput.value).toFixed(2);
         fcalcInput.dispatchEvent(new Event('input'));

@@ -36,7 +36,7 @@ $locationdb =
     "ideal_moju"            => "bd_ideal_mo",
     "ideal_balsas"          => "bd_ideal_bs",
     "ideal_vianopolis"      => "bd_ideal_goiania",
-    "ideal_goianesia"       => "bd_ideal_go", //10030598
+    "ideal_goianesia"       => "bd_ideal_go",
     
     //Maruzi
     "maruzi_grajau"          => "bd_maruzi_gr",
@@ -62,7 +62,7 @@ else echo '<div class="alert message" style="left: 0px; opacity: 1; visibility: 
     <form method="POST" action="auth.php">
         <main class="container">
             <section id="bag-logo">
-                <img src="app/media/images/bag-logo.svg" alt="App de Vendas">
+                <img src="app/media/images/bag-logo.svg" alt="GControl Vendas">
             </section>
 
             <section id="select-user">

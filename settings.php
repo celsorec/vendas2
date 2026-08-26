@@ -7,7 +7,7 @@ setlocale(LC_ALL, 'pt_BR');
 ini_set('display_errors', 1);          //Exibição de erros na tela (ambiente de desenvolvimento)
 ini_set('display_startup_erros', 1);   //Exibição de erros que ocorrem durante a inicialização do PHP
 ini_set('log_errors', 1);              //Ativa a gravação de erros em um arquivo de log externo
-ini_set('error_log', __DIR__ . '/errors/log_' . date('Y-m-d__H-i-s') . '.txt'); //Gravando Logs de erros
+ini_set('error_log', __DIR__ . '/logs/log_' . date('Y-m-d__H-i-s') . '.txt'); //Gravando Logs de erros
 error_reporting(E_ALL);  //Reportando todos os tipos de erros
 
 //Capturando erros comuns do PHP (ex: variáveis indefinidas, avisos)

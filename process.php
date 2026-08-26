@@ -39,6 +39,16 @@ else
     exit;
 }
 
+//REGISTRANDO LOGS DE CADA VENDA PARA ENTENDER PORQUE FTOTA ESTÁ SUMINDO EM PEDREIRAS.
+file_put_contents(
+    __DIR__ . '/logs/FTOTA_debug'.$data['movfa'].'.log',
+    date('Y-m-d H:i:s') . ' | ' .
+    ($_SERVER['REMOTE_ADDR'] ?? '') . ' | ' .
+    json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) .
+    PHP_EOL,
+    FILE_APPEND
+);
+
 //Comprovante de impressão e Configurações de pagamento
 require_once 'app/modules/config-printing.php';
 require_once 'app/modules/config-checkout.php';

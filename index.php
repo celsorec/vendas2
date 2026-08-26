@@ -12,9 +12,10 @@ require_once 'localconnection.php';
 //Mensagens do sistema
 if(isset($_SESSION['message'])) print MessageHelper::getMessage();
 
-//Animação 'Processo em Andamento...'
-$load = require_once 'app/modules/load.php';
-$menu = require_once 'app/modules/menu.php';
+//Módulos
+$load = require_once 'app/modules/load.php';  //Animação 'Processo em Andamento...
+$menu = require_once 'app/modules/menu.php';  //Menu principal...
+require_once 'app/modules/update-notify.php'; //Notifica atualizações
 
 //Se não estiver conectado à mesma rede do servidor
 if(!$accessAllowed)
