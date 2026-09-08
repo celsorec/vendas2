@@ -16,8 +16,10 @@ $description = 'Uma extensão do GControl Desktop';
     <link rel="icon" type="image/svg" href="assets/images/favicon.svg">
 
     <!-- ASSETS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/script.js" defer></script>
+    <?php $scriptJS  = require('assets/js/scriptJS.php'); ?>
+    <?php $scriptCSS = require('assets/css/styleCSS.php'); ?>
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <!-- <script src="assets/js/script.js" defer></script> -->
 
     <!-- FONTS GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

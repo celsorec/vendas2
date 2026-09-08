@@ -1,5 +1,22 @@
 <?php
 
+//Gerenciamento de sessões
+if(session_status() === PHP_SESSION_NONE)
+{
+    $sessionPath = __DIR__.'/../../sessions';
+
+    if(!is_dir($sessionPath))
+    {
+        mkdir($sessionPath, 0777, true);
+
+        //Leitura e Escrita no Windows
+        if(PHP_OS_FAMILY === 'Windows') exec('icacls "' . $sessionPath . '" /grant IIS_IUSRS:(OI)(CI)M');
+    }
+
+    session_save_path($sessionPath);
+    session_start();
+}
+
 require_once __DIR__.'/../Database/DataRecord.php';
 require_once __DIR__.'/../Message/MessageHelper.php';
 

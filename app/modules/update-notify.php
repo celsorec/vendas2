@@ -1,3 +1,6 @@
+<?php
+
+$output = <<<OUTPUT
 <div class="bgmodal" id="update-notify">
     <div class="modal">
         <h2>ATUALIZAÇÃO</h2>
@@ -5,3 +8,6 @@
         <a href="?view=about" class="btn update load"><span class="icon"></span> <span class="text">Ver Atualizações</span></a>
     </div>
 </div>
+OUTPUT;
+
+return $output;

@@ -8,4 +8,4 @@ $output = <<<OUTPUT
 </div>
 OUTPUT;
 
-print $output;
+return $output;

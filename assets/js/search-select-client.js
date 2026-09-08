@@ -1,16 +1,16 @@
 //LOCALIZAR CLIENTE; LISTAR LOCALIZADOS; ADICIONAR AO CAMPO
-let searchInput = document.querySelector('.input-search input#codcl'); //Campo para digitação do código do cliente
-let resultAjax  = document.querySelector('.result-ajax');              //Elemento para apresentação do resultado Ajax
+let searchInputClient = document.querySelector('.input-search input#codcl'); //Campo para digitação do código do cliente
+let resultAjaxClient  = document.querySelector('.result-ajax');              //Elemento para apresentação do resultado Ajax
 
-if(searchInput)
+if(searchInputClient)
 {
     /**
      * Buscando por digitação do código do cliente, AJAX
      */
-    searchInput.addEventListener('input', () =>
+    searchInputClient.addEventListener('input', () =>
     {
         //Função searchAjax; arquivo search-ajax.js
-        window.searchAjax(searchInput).then((responseData) =>
+        window.searchAjax(searchInputClient).then((responseData) =>
         {
             displayItems(responseData);
         });
@@ -39,7 +39,7 @@ if(searchInput)
         {
             html += '<li class="empty-list"><span class="alert">'+responseData.minLenghtAlert+'</span></li>';
         }
-        resultAjax.innerHTML = html;
+        resultAjaxClient.innerHTML = html;
         toInput();
     }
     
@@ -69,8 +69,8 @@ if(searchInput)
                 });
     
                 //Adicionando valor ao input cliente imediatamente
-                searchInput.value = selectClient;
-                searchInput.dispatchEvent(new Event('input', {bubbles: true}));
+                searchInputClient.value = selectClient;
+                searchInputClient.dispatchEvent(new Event('input', {bubbles: true}));
         
                 //Ocultar lista ajax quando cliente é selecionado
                 element.parentElement.classList.add('hidden');

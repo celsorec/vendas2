@@ -9,9 +9,6 @@
 @import url('modules/message.css');
 @import url('modules/update-notify.css');
 
-/*@import url('modules/header.css');*/
-/*@import url('modules/footer.css');*/
-
 /* Views */
 @import url('views/config.css');
 @import url('views/home.css');

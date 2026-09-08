@@ -6,15 +6,22 @@ async function verification()
     //Arquivo JSON
     const jsonFile   = await fetch('./././settings.json', {cache: 'no-store'}); //Arquivo de configurações
     const jsonData   = await jsonFile.json();
-    const appVersion = localStorage.getItem('app_version');
+    let   appVersion = localStorage.getItem('app_version');
 
     //Modal de alerta de atualização
     let modalNotify = document.querySelector('#update-notify');
     let spanVersion = modalNotify.querySelector('.modal span');
     spanVersion.innerText = jsonData.version; //Número da versão na modal
 
-    //Ativa modal de alerta de atualização
-    if(appVersion && appVersion !== jsonData.version) modalNotify.classList.add('active');
+    //Se não existe versão em localStorage(app_version), armazena versão atual e atualiza variável
+    if(!appVersion)
+    {
+        localStorage.setItem('app_version', jsonData.version);
+        appVersion = localStorage.getItem('app_version');
+    }
+
+    //Se versão atual é diferente da nova versão, ativa modal de alerta de atualização
+    if(appVersion !== jsonData.version) modalNotify.classList.add('active');
 
     //Obtendo versão do sistema na página Sobre
     let versionControl = document.querySelectorAll('#about h2');
@@ -29,4 +36,7 @@ async function verification()
         modalNotify.classList.remove('active');
     }
 }
-verification();
+
+//Impedindo que verificação de versão ocorra na tela de login
+const configView = document.querySelector('#config');
+if(!configView) verification();

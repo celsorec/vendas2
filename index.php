@@ -15,7 +15,10 @@ if(isset($_SESSION['message'])) print MessageHelper::getMessage();
 //Módulos
 $load = require_once 'app/modules/load.php';  //Animação 'Processo em Andamento...
 $menu = require_once 'app/modules/menu.php';  //Menu principal...
-require_once 'app/modules/update-notify.php'; //Notifica atualizações
+$notify = require_once 'app/modules/update-notify.php'; //Notifica atualizações
+
+echo $load;
+echo $notify;
 
 //Se não estiver conectado à mesma rede do servidor
 if(!$accessAllowed)

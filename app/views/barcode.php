@@ -4,7 +4,7 @@
 
         <video id="video" autoplay playsinline></video>
 
-        <a href="<?=$_SERVER['HTTP_REFERER'];?>" id="cancel" class="btn load">CANCELAR</a>
+        <a href="<?= htmlspecialchars($_SERVER['HTTP_REFERER'] ?? 'index.php', ENT_QUOTES, 'UTF-8'); ?>" id="cancel" class="btn load">CANCELAR</a>
     </div>
 
     <div id="tip">APROXIME O CÓDIGO DE BARRAS</div>
